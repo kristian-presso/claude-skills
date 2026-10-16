@@ -5,7 +5,7 @@
     "url": "https://kristianpapadakis.com"
   },
   "metadata": {
-    "description": "Claude skills from the agents that run my business: building with Claude, go-to-market, marketing, UK business and operator discipline. Free, MIT licensed.",
+    "description": "Claude skills from the agents that run my business: operator discipline and an operator starter, building with Claude, go-to-market, marketing and UK business. Free, MIT licensed.",
     "version": "0.1.0"
   },
   "plugins": [
@@ -25,6 +25,24 @@
         "meetings"
       ],
       "homepage": "https://github.com/kristian-presso/claude-operator-skills"
+    },
+    {
+      "name": "operator-starter",
+      "source": {
+        "source": "github",
+        "repo": "kristian-presso/claude-operator-starter"
+      },
+      "description": "A way of working for running a small business or side project with Claude Code: an interview that writes your CLAUDE.md rules and memory folder, approval-gate hooks that ask before Claude sends, publishes, pays or deletes, and a Friday weekly review.",
+      "version": "0.1.0",
+      "category": "productivity",
+      "keywords": [
+        "operations",
+        "claude-md",
+        "hooks",
+        "approval",
+        "weekly-review"
+      ],
+      "homepage": "https://github.com/kristian-presso/claude-operator-starter"
     },
     {
       "name": "agent-builder",

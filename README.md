@@ -9,11 +9,11 @@ I run a small software business with AI agents doing most of the work: inbox tri
 /plugin install operator-discipline@claude-skills
 ```
 
-Swap `operator-discipline` for any plugin below, or install all five. Each department also has its own repository (linked in the headings below) to star, fork or install on its own. `pushback` and `solutions-shape` work best always-on: the [operator-discipline README](https://github.com/kristian-presso/claude-operator-skills#make-it-always-on) has a few lines to paste into your `CLAUDE.md`.
+Swap `operator-discipline` for any plugin below, or install all six. Each department also has its own repository (linked in the headings below) to star, fork or install on its own. `pushback` and `solutions-shape` work best always-on: the [operator-discipline README](https://github.com/kristian-presso/claude-operator-skills#make-it-always-on) has a few lines to paste into your `CLAUDE.md`.
 
 ## What is in it
 
-Five departments, each in its own repository. This repository is the marketplace that installs any or all of them.
+Six departments, each in its own repository. This repository is the marketplace that installs any or all of them.
 
 ### [operator-discipline](https://github.com/kristian-presso/claude-operator-skills)
 
@@ -27,6 +27,16 @@ How an agent behaves when it is doing real work for a busy person. **Start here.
 | [write-playbook](https://github.com/kristian-presso/claude-operator-skills/blob/main/skills/write-playbook/SKILL.md) | A recurring process lives in someone's head and needs writing down with an owner and a done-check. |
 | [meeting-notes](https://github.com/kristian-presso/claude-operator-skills/blob/main/skills/meeting-notes/SKILL.md) | A transcript or notes need turning into decisions, owned actions, open questions and a follow-up email. |
 | [level-up](https://github.com/kristian-presso/claude-operator-skills/blob/main/skills/level-up/SKILL.md) | You want the single next thing worth automating, not a list of twenty. |
+
+### [operator-starter](https://github.com/kristian-presso/claude-operator-starter)
+
+The wiring: a way of working for running a small business or side project with Claude Code.
+
+| Part | Use it when |
+| --- | --- |
+| [setup-operator](https://github.com/kristian-presso/claude-operator-starter/blob/main/skills/setup-operator/SKILL.md) | Starting out. Four questions, one at a time, then writes your `CLAUDE.md` rules, approval rules, a `memory/` folder and a Friday routine. |
+| [weekly-review](https://github.com/kristian-presso/claude-operator-starter/blob/main/skills/weekly-review/SKILL.md) | Fridays. What shipped, what is stuck, decisions made, and the one thing to automate next. |
+| [Approval gate](https://github.com/kristian-presso/claude-operator-starter#how-the-approval-gate-works) (hook) | Always, once installed. Claude Code asks you before Claude sends, publishes, pays or deletes. |
 
 ### [agent-builder](https://github.com/kristian-presso/claude-agent-builder)
 
@@ -83,6 +93,8 @@ Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five 
 | operator-discipline | write-playbook | 0.92 | 0.58 | +0.34 |
 | operator-discipline | meeting-notes | 1.00 | 0.90 | +0.10 |
 | operator-discipline | level-up | 0.98 | 0.65 | +0.33 |
+| operator-starter | setup-operator | 1.00 | 0.83 | +0.17 |
+| operator-starter | weekly-review | 1.00 | 0.78 | +0.22 |
 | agent-builder | mcp-server-builder | 0.95 | 0.86 | +0.09 |
 | agent-builder | mcp-app-builder | 0.96 | 0.71 | +0.25 |
 | agent-builder | agent-security | 1.00 | 0.96 | +0.04 |
