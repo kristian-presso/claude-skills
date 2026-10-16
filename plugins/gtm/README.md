@@ -34,6 +34,10 @@ In Claude Code:
 - `signal-prospecting` uses public business information only, cites a source and date for
   every claim, and respects opt-outs.
 
+## Feedback
+
+Used one of these? [Tell me what worked and what broke](https://tally.so/r/7XlJbL?source=gtm) - two minutes, every answer read.
+
 ## Licence
 
 MIT.

@@ -47,6 +47,10 @@ In Claude Code:
 
 On claude.ai, upload any single skill folder from `skills/` as a custom skill.
 
+## Feedback
+
+Used one of these? [Tell me what worked and what broke](https://tally.so/r/7XlJbL?source=marketing) - two minutes, every answer read.
+
 ## Licence
 
 MIT.

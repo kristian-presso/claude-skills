@@ -51,6 +51,10 @@ Each skill ends with a short **Configuration** section naming the one or two thi
 genuinely vary (where your decisions live, where guides and playbooks are kept, which notes
 tool you use). None of them need any particular directory layout or service to work.
 
+## Feedback
+
+Used one of these? [Tell me what worked and what broke](https://tally.so/r/7XlJbL?source=operator-discipline) - two minutes, every answer read.
+
 ## Licence
 
 MIT.

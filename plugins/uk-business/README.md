@@ -41,6 +41,10 @@ Re-check by 06/01/2027, or sooner after a Budget. The full list of moving figure
 
 `uk-deadlines` and `cash-runway` each ship a small Python script (standard library only, no installs) for the date arithmetic and the bank CSV maths. The skills work without them: Claude falls back to doing the calculation by hand and showing the working.
 
+## Feedback
+
+Used one of these? [Tell me what worked and what broke](https://tally.so/r/7XlJbL?source=uk-business) - two minutes, every answer read.
+
 ## Licence
 
 MIT.

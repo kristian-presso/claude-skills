@@ -120,6 +120,10 @@ Facts that change - tax rates, API behaviour, platform limits, directory rules -
 
 What is deliberately not here: skills bound to my own repos, memory layout or tone of voice, and anything that is really someone else's work. Vendor skills belong to their vendors, and book frameworks belong to their authors.
 
+## Feedback
+
+Two minutes on [this form](https://tally.so/r/7XlJbL?source=claude-skills) tells me what worked, what broke and what to build next. Every answer gets read. Bugs with steps to reproduce are best as a GitHub issue.
+
 ## Contributing
 
 Issues are the most useful thing you can send. If a skill fired when it should not have, did not fire when it should, or produced the wrong thing, tell me what you typed and what happened. That is exactly the judgement the skill was missing.
