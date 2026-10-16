@@ -1,5 +1,5 @@
 schema_version: "1.1"
-name: ai-search-visibility-02-rewrite-pricing
+name: ai-search-visibility-03-rewrite-pricing
 tags: [ai-search-visibility, fire]
 context:
   scaffold_script: setup.sh

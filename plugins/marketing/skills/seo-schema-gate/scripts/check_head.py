@@ -75,7 +75,7 @@ def load(target):
             print(f"Could not fetch {target}: {e}", file=sys.stderr)
             sys.exit(2)
     try:
-        with open(target, encoding="utf-8") as f:
+        with open(target, encoding="utf-8", errors="replace") as f:
             return f.read(), None, None
     except OSError as e:
         print(f"Could not read {target}: {e}", file=sys.stderr)

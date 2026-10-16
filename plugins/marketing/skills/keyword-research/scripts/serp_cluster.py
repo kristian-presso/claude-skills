@@ -47,8 +47,13 @@ def main():
     ap.add_argument("--threshold", type=float, default=0.4)
     ap.add_argument("--tsv", action="store_true", help="print keyword<TAB>cluster_id instead of blocks")
     args = ap.parse_args()
+    if not 0 < args.threshold <= 1:
+        ap.error("--threshold must be above 0 and at most 1")
 
-    src = open(args.file, encoding="utf-8") if args.file else sys.stdin
+    try:
+        src = open(args.file, encoding="utf-8", errors="replace") if args.file else sys.stdin
+    except OSError as e:
+        sys.exit(f"cannot read {args.file}: {e.strerror}")
     serps = defaultdict(set)
     order = []
     for line in src:
@@ -80,7 +85,7 @@ def main():
     for i, a in enumerate(order):
         for b in order[i + 1:]:
             s = jaccard(serps[a], serps[b])
-            if s >= args.threshold:
+            if s > 0 and s >= args.threshold:  # no shared result never links two keywords
                 pair_scores[(a, b)] = s
                 parent[find(a)] = find(b)
 

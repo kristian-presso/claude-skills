@@ -22,6 +22,10 @@ no AI crawler can read changes nothing.
 
 If they give a URL with no other instruction, run Audit. If they paste prose, run Rewrite.
 
+If they ask for a rewrite but you can see a crawl blocker (robots.txt, `noindex`, content
+behind JavaScript), the first line of your answer names the blocker and says the rewrite
+changes nothing until it is fixed. Then do the rewrite.
+
 ## Mode 1: Audit
 
 Work through the four layers in order and stop to report if a lower layer is broken. A

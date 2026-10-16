@@ -74,7 +74,10 @@ def main():
 
     brands = [b.strip().lower() for b in args.brand.split(",") if b.strip()]
     brand_res = compile_tokens(brands)
-    src = open(args.file, encoding="utf-8") if args.file else sys.stdin
+    try:
+        src = open(args.file, encoding="utf-8", errors="replace") if args.file else sys.stdin
+    except OSError as e:
+        sys.exit(f"cannot read {args.file}: {e.strerror}")
     if args.header:
         print("keyword\tintent\tmatched")
     for line in src:
