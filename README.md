@@ -9,11 +9,11 @@ I run a small software business with AI agents doing most of the work: inbox tri
 /plugin install operator-discipline@claude-skills
 ```
 
-Swap `operator-discipline` for any plugin below, or install all six. Each department also has its own repository (linked in the headings below) to star, fork or install on its own. `pushback` and `solutions-shape` work best always-on: the [operator-discipline README](https://github.com/kristian-presso/claude-operator-skills#make-it-always-on) has a few lines to paste into your `CLAUDE.md`.
+Swap `operator-discipline` for any plugin below, or install them all. Each department also has its own repository (linked in the headings below) to star, fork or install on its own. `pushback` and `solutions-shape` work best always-on: the [operator-discipline README](https://github.com/kristian-presso/claude-operator-skills#make-it-always-on) has a few lines to paste into your `CLAUDE.md`.
 
 ## What is in it
 
-Six departments, each in its own repository. This repository is the marketplace that installs any or all of them.
+Each department lives in its own repository. This repository is the marketplace that installs any or all of them.
 
 ### [operator-discipline](https://github.com/kristian-presso/claude-operator-skills)
 
@@ -83,6 +83,14 @@ Running a small UK limited company. Reference, not advice: every figure carries 
 | [uk-deadlines](https://github.com/kristian-presso/claude-uk-business-skills/blob/main/skills/uk-deadlines/SKILL.md) | You want your company's own filing calendar for the next 12 months. |
 | [cash-runway](https://github.com/kristian-presso/claude-uk-business-skills/blob/main/skills/cash-runway/SKILL.md) | You want to know how much cash is yours after VAT, Corporation Tax and PAYE, and how long it lasts. |
 
+### [eu-business](https://github.com/kristian-presso/claude-eu-business-skills)
+
+Running or selling into a small business in Germany, France, Spain, Denmark or Greece. Reference, not advice: every figure carries the date it was checked and the official source.
+
+| Skill | Use it when |
+| --- | --- |
+| [eu-company-guide](https://github.com/kristian-presso/claude-eu-business-skills/blob/main/skills/eu-company-guide/SKILL.md) | You have a question about VAT, e-invoicing, company forms, corporate tax, minimum wage or data protection in one of those five countries, or an EU-wide rule. |
+
 ## Tested, not just written
 
 Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five cases per skill (three it should handle, two near-misses it must leave alone), each run three times with the skill and three times without, graded by a separate model. A skill ships only if Claude does better with it than without it. Results from 16/10/2026:
@@ -114,6 +122,7 @@ Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five 
 | uk-business | uk-company-guide | 1.00 | 0.83 | +0.17 |
 | uk-business | uk-deadlines | 0.97 | 0.63 | +0.34 |
 | uk-business | cash-runway | 1.00 | 0.43 | +0.57 |
+| eu-business | eu-company-guide | 1.00 | 0.75 | +0.25 |
 
 Small gains mean plain Claude already does well there; those skills earn their place on the cases it gets wrong. The eval cases live in each department repository's `evals/` folder, so you can re-run them yourself:
 

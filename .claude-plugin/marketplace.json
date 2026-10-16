@@ -5,7 +5,7 @@
     "url": "https://kristianpapadakis.com"
   },
   "metadata": {
-    "description": "Claude skills from the agents that run my business: operator discipline and an operator starter, building with Claude, go-to-market, marketing and UK business. Free, MIT licensed.",
+    "description": "Claude skills from the agents that run my business: operator discipline and an operator starter, building with Claude, go-to-market, marketing, UK business and EU business. Free, MIT licensed.",
     "version": "0.1.0"
   },
   "plugins": [
@@ -116,6 +116,24 @@
         "cash-flow"
       ],
       "homepage": "https://github.com/kristian-presso/claude-uk-business-skills"
+    },
+    {
+      "name": "eu-business",
+      "source": {
+        "source": "github",
+        "repo": "kristian-presso/claude-eu-business-skills"
+      },
+      "description": "Running or selling into a small business in Germany, France, Spain, Denmark or Greece with Claude: VAT, e-invoicing, company forms, corporate tax, minimum wage and data protection, plus the EU-wide rules. Reference, not advice.",
+      "version": "0.1.0",
+      "category": "finance",
+      "keywords": [
+        "eu",
+        "tax",
+        "vat",
+        "e-invoicing",
+        "company-law"
+      ],
+      "homepage": "https://github.com/kristian-presso/claude-eu-business-skills"
     }
   ]
 }
