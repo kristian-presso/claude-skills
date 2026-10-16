@@ -1,0 +1,9 @@
+{
+  "name": "uk-business",
+  "version": "0.1.0",
+  "description": "Running a small UK limited company with Claude: the rules, the deadlines, and knowing how much cash you really have. Reference, not advice.",
+  "author": { "name": "Kristian Papadakis", "url": "https://kristianpapadakis.com" },
+  "homepage": "https://github.com/kristian-presso/claude-skills",
+  "license": "MIT",
+  "keywords": ["uk", "limited company", "tax", "vat", "corporation tax", "hmrc", "companies house", "deadlines", "cash flow", "runway", "small business"]
+}

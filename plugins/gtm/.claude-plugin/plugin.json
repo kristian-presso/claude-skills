@@ -1,0 +1,21 @@
+{
+  "name": "gtm",
+  "version": "0.1.0",
+  "description": "Outbound for founders and small B2B teams: find prospects from public signals with a sourced reason to contact each, and run sequences that do not burn your sending domains.",
+  "author": {
+    "name": "Kristian Papadakis",
+    "url": "https://kristianpapadakis.com"
+  },
+  "homepage": "https://github.com/kristian-presso/claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "go-to-market",
+    "b2b",
+    "sales",
+    "outbound",
+    "cold-email",
+    "deliverability",
+    "prospecting",
+    "signals"
+  ]
+}

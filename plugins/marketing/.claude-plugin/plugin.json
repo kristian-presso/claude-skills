@@ -1,0 +1,22 @@
+{
+  "name": "marketing",
+  "version": "0.1.0",
+  "description": "Content and search skills for small teams, built to get you found and cited by AI answer engines as well as Google.",
+  "author": {
+    "name": "Kristian Papadakis",
+    "url": "https://kristianpapadakis.com"
+  },
+  "homepage": "https://github.com/kristian-presso/claude-skills",
+  "license": "MIT",
+  "keywords": [
+    "marketing",
+    "seo",
+    "geo",
+    "aeo",
+    "ai-search",
+    "keyword-research",
+    "structured-data",
+    "content-repurposing",
+    "linkedin"
+  ]
+}

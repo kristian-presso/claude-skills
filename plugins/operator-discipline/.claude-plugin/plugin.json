@@ -1,0 +1,12 @@
+{
+  "name": "operator-discipline",
+  "version": "0.1.0",
+  "description": "How an agent behaves when doing real work for a busy founder: challenge a bad brief, hand back solutions not problems, write guides and playbooks people can follow, and turn meetings into decisions and actions.",
+  "author": {
+    "name": "Kristian Papadakis",
+    "url": "https://kristianpapadakis.com"
+  },
+  "homepage": "https://github.com/kristian-presso/claude-skills",
+  "license": "MIT",
+  "keywords": ["operations", "founder", "pushback", "playbook", "setup-guide", "meeting-notes", "automation"]
+}

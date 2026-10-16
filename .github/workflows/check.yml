@@ -1,0 +1,24 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate every skill
+        run: |
+          for d in plugins/*/skills/*/; do
+            python3 -I plugins/agent-builder/skills/skill-builder/scripts/validate_skill.py "$d"
+          done
+      - name: Shared reference files in step
+        run: python3 tools/sync_shared.py --check
+      - name: Manifests are valid JSON
+        run: |
+          python3 -c "import json,glob; [json.load(open(p)) for p in ['.claude-plugin/marketplace.json', *glob.glob('plugins/*/.claude-plugin/plugin.json')]]"

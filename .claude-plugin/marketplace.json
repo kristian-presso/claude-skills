@@ -1,0 +1,81 @@
+{
+  "name": "claude-skills",
+  "owner": {
+    "name": "Kristian Papadakis",
+    "url": "https://kristianpapadakis.com"
+  },
+  "metadata": {
+    "description": "Claude skills from the agents that run my business: building with Claude, go-to-market, marketing, UK business and operator discipline. Free, MIT licensed.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "operator-discipline",
+      "source": "./plugins/operator-discipline",
+      "description": "How an agent behaves when doing real work for a busy founder: challenge a bad brief, hand back solutions not problems, write guides and playbooks people can follow, and turn meetings into decisions and actions.",
+      "version": "0.1.0",
+      "category": "productivity",
+      "keywords": [
+        "agents",
+        "productivity",
+        "playbooks",
+        "meetings"
+      ]
+    },
+    {
+      "name": "agent-builder",
+      "source": "./plugins/agent-builder",
+      "description": "MCP servers and MCP Apps that ship and get listed, agent security that removes risk rather than describing it, a loop for shipping real work with coding agents, and turning a manual process into a skill.",
+      "version": "0.1.0",
+      "category": "development",
+      "keywords": [
+        "mcp",
+        "agents",
+        "security",
+        "skills",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "gtm",
+      "source": "./plugins/gtm",
+      "description": "Outbound for founders and small B2B teams: find prospects from public signals with a sourced reason to contact each, and run sequences that do not burn your sending domains.",
+      "version": "0.1.0",
+      "category": "sales",
+      "keywords": [
+        "sales",
+        "outbound",
+        "prospecting",
+        "deliverability"
+      ]
+    },
+    {
+      "name": "marketing",
+      "source": "./plugins/marketing",
+      "description": "Content and search for small teams, built to get you found and cited by AI answer engines as well as Google.",
+      "version": "0.1.0",
+      "category": "marketing",
+      "keywords": [
+        "seo",
+        "geo",
+        "ai-search",
+        "content",
+        "linkedin"
+      ]
+    },
+    {
+      "name": "uk-business",
+      "source": "./plugins/uk-business",
+      "description": "Running a small UK limited company with Claude: the rules, the deadlines, and knowing how much cash you really have. Reference, not advice.",
+      "version": "0.1.0",
+      "category": "finance",
+      "keywords": [
+        "uk",
+        "tax",
+        "vat",
+        "companies-house",
+        "cash-flow"
+      ]
+    }
+  ]
+}
