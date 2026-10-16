@@ -32,15 +32,16 @@
         "source": "github",
         "repo": "kristian-presso/claude-operator-starter"
       },
-      "description": "A way of working for running a small business or side project with Claude Code: an interview that writes your CLAUDE.md rules and memory folder, approval-gate hooks that ask before Claude sends, publishes, pays or deletes, and a Friday weekly review.",
-      "version": "0.1.0",
+      "description": "A way of working for running a small business or side project with Claude Code: an interview that writes your CLAUDE.md rules and memory folder, approval-gate hooks that ask before Claude sends, publishes, pays or deletes, a Friday weekly review, and an always-on Mac to run scheduled agent jobs unattended.",
+      "version": "0.2.0",
       "category": "productivity",
       "keywords": [
         "operations",
         "claude-md",
         "hooks",
         "approval",
-        "weekly-review"
+        "weekly-review",
+        "launchd"
       ],
       "homepage": "https://github.com/kristian-presso/claude-operator-starter"
     },

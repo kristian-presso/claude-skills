@@ -36,6 +36,7 @@ The wiring: a way of working for running a small business or side project with C
 | --- | --- |
 | [setup-operator](https://github.com/kristian-presso/claude-operator-starter/blob/main/skills/setup-operator/SKILL.md) | Starting out. Four questions, one at a time, then writes your `CLAUDE.md` rules, approval rules, a `memory/` folder and a Friday routine. |
 | [weekly-review](https://github.com/kristian-presso/claude-operator-starter/blob/main/skills/weekly-review/SKILL.md) | Fridays. What shipped, what is stuck, decisions made, and the one thing to automate next. |
+| [always-on-mac](https://github.com/kristian-presso/claude-operator-starter/blob/main/skills/always-on-mac/SKILL.md) | A Mac you own should run Claude Code jobs unattended: launchd instead of cron, the PATH trap, sleep, restarts, sign-in, remote access and monitoring. Includes a read-only health check. |
 | [Approval gate](https://github.com/kristian-presso/claude-operator-starter#how-the-approval-gate-works) (hook) | Always, once installed. Claude Code asks you before Claude sends, publishes, pays or deletes. |
 
 ### [agent-builder](https://github.com/kristian-presso/claude-agent-builder)
@@ -105,6 +106,7 @@ Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five 
 | operator-discipline | level-up | 0.98 | 0.65 | +0.33 |
 | operator-starter | setup-operator | 1.00 | 0.83 | +0.17 |
 | operator-starter | weekly-review | 1.00 | 0.78 | +0.22 |
+| operator-starter | always-on-mac | 1.00 | 0.80 | +0.20 |
 | agent-builder | mcp-server-builder | 0.95 | 0.86 | +0.09 |
 | agent-builder | mcp-app-builder | 0.96 | 0.71 | +0.25 |
 | agent-builder | agent-security | 1.00 | 0.96 | +0.04 |
