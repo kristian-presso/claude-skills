@@ -1,5 +1,0 @@
-schema_version: "1.1"
-name: cash-runway-01-bank-csv
-tags: [cash-runway, fire]
-context:
-  scaffold_script: setup.sh

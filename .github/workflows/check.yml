@@ -4,27 +4,35 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
+# The skills, their validator, unit tests and the uk-deadlines calendar sync now
+# run in each department repository's own CI. This hub only lists them.
 jobs:
-  skills:
+  marketplace:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: JSON files parse
+        run: |
+          python3 -I -c "import json,subprocess; fs=subprocess.run(['git','ls-files','*.json'],capture_output=True,text=True,check=True).stdout.split(); [json.load(open(f)) for f in fs]; print(len(fs),'JSON files ok')"
+      - name: Every listed department repository exists and is a plugin
+        run: |
+          python3 -I - <<'PY'
+          import json, urllib.request
+          m = json.load(open(".claude-plugin/marketplace.json"))
+          for e in m["plugins"]:
+              src = e["source"]
+              if not isinstance(src, dict) or src.get("source") != "github":
+                  continue
+              url = f"https://raw.githubusercontent.com/{src['repo']}/{src.get('ref', 'HEAD')}/.claude-plugin/plugin.json"
+              name = json.load(urllib.request.urlopen(url))["name"]
+              assert name == e["name"], f"{src['repo']} plugin.json name {name!r} != entry {e['name']!r}"
+              print("ok", e["name"], "->", src["repo"])
+          PY
+      - uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
-      - name: Validate every skill
-        run: |
-          for d in plugins/*/skills/*/; do
-            python3 -I plugins/agent-builder/skills/skill-builder/scripts/validate_skill.py "$d"
-          done
-      - name: Shared reference files in step
-        run: python3 tools/sync_shared.py --check
-      - name: Manifests are valid JSON
-        run: |
-          python3 -c "import json,glob; [json.load(open(p)) for p in ['.claude-plugin/marketplace.json', *glob.glob('plugins/*/.claude-plugin/plugin.json')]]"
-      - name: Script unit tests
-        run: |
-          for t in plugins/*/tests; do
-            echo "== $t"
-            (cd "$(dirname "$t")" && python3 -I -m unittest discover -s tests)
-          done
+          node-version: "22"
+      - name: Marketplace manifest
+        run: npx -y @anthropic-ai/claude-code@2.1.301 plugin validate .

@@ -1,5 +1,0 @@
-schema_version: "1.1"
-name: content-atomisation-05-neg-summary
-tags: [content-atomisation, no-fire]
-context:
-  scaffold_script: setup.sh

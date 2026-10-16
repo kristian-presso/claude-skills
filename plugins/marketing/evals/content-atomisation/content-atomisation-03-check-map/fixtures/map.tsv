@@ -1,6 +1,0 @@
-sequence	lag_days	channel	format	core_claim	link_target	cta
-1	0	blog	guide	Reply speed decides most venue bookings	https://example-venue.example/blog/reply-speed	N/A
-2	0	linkedin	single post	Venues that reply within an hour win twice as many bookings	https://example-venue.example/blog/reply-speed	Read the full post
-3	3	email	newsletter feature	Four templates cover 80% of venue enquiries	https://example-venue.example/blog/reply-speed	Download the templates
-4	2	instagram	8-slide carousel	Replying inside an hour doubles your venue bookings	https://example-venue.example/blog/reply-speed	Save this post
-5	10	linkedin	single post	We cut first-reply time from 19 hours to 47 minutes	https://example-venue.example/blog/reply-speed	
