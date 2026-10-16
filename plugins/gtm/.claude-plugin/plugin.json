@@ -1,7 +1,7 @@
 {
   "name": "gtm",
-  "version": "0.2.0",
-  "description": "Go-to-market for anyone selling B2B: design the motion (ICP, tiers, signals, weekly routine), find prospects with a sourced reason to contact each, plan multi-person account plays with proposed use cases, and run sequences that do not burn your sending domains.",
+  "version": "0.3.0",
+  "description": "Go-to-market for anyone selling B2B: design the motion, run a standing prospect radar from news, hiring and competitor-change feeds, plan multi-person account plays, check every draft before it goes out, and run sequences that do not burn your sending domains.",
   "author": {
     "name": "Kristian Papadakis",
     "url": "https://kristianpapadakis.com"
@@ -9,17 +9,20 @@
   "homepage": "https://github.com/kristian-presso/claude-skills",
   "license": "MIT",
   "keywords": [
-    "go-to-market",
+    "account-planning",
     "b2b",
-    "sales",
-    "outbound",
+    "buying-committee",
     "cold-email",
     "deliverability",
-    "prospecting",
-    "signals",
+    "go-to-market",
+    "google-alerts",
     "icp",
-    "territory",
-    "account-planning",
-    "buying-committee"
+    "outbound",
+    "prospecting",
+    "prospecting-feeds",
+    "rss",
+    "sales",
+    "signals",
+    "territory"
   ]
 }

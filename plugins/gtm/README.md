@@ -1,7 +1,7 @@
 # gtm
 
 Go-to-market for anyone selling B2B: founders doing their own sales, account executives
-with a named territory, account managers growing a book, consultants. Four skills that
+with a named territory, account managers growing a book, consultants. Six skills that
 cover the path from "who should I go after, and in what order?" to "the first messages
 are drafted and landing in inboxes".
 
@@ -14,8 +14,10 @@ the skill uses it if present and falls back to working from what you give it.
 | Skill | Use it when |
 | --- | --- |
 | **gtm-motion** | You want a repeatable motion: which accounts, which signals, which personas, and a weekly routine. Start here. |
+| **prospect-radar** | You want new companies found for you every day or week: it builds and tests news, hiring and competitor-change feeds, then turns each run into a short sourced list with drafts. |
 | **signal-prospecting** | You need a short list of accounts with a real, recent reason to contact each one, the right person there, and a sourced use case. |
 | **account-play** | One account deserves real effort: map who decides, propose two or three use cases, plan a multi-person play and draft the first touches. |
+| **pre-send-check** | Before any outreach goes out: eight checks (already in touch, meeting coming up, whose account, opted out and more) that turn a plausible draft into a sendable one. |
 | **outbound-sequences** | You are designing or fixing a cold outreach sequence, or setting up a sending domain and want to check it will not end up in spam. |
 
 Run them in that order, or use any one on its own.

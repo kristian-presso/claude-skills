@@ -39,8 +39,8 @@
     {
       "name": "gtm",
       "source": "./plugins/gtm",
-      "description": "Go-to-market for anyone selling B2B: design the motion (ICP, tiers, signals, weekly routine), find prospects with a sourced reason to contact each, plan multi-person account plays with proposed use cases, and run sequences that do not burn your sending domains.",
-      "version": "0.2.0",
+      "description": "Go-to-market for anyone selling B2B: design the motion, run a standing prospect radar from news, hiring and competitor-change feeds, plan multi-person account plays, check every draft before it goes out, and run sequences that do not burn your sending domains.",
+      "version": "0.3.0",
       "category": "sales",
       "keywords": [
         "account-planning",

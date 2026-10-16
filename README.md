@@ -46,6 +46,8 @@ Go-to-market for anyone selling B2B - founders, account executives with a named 
 | --- | --- |
 | [gtm-motion](plugins/gtm/skills/gtm-motion/SKILL.md) | Designing the motion: ICP, tiered accounts, weighted buying signals, personas and a weekly routine. |
 | [account-play](plugins/gtm/skills/account-play/SKILL.md) | Planning one account: who decides, two or three proposed use cases, a multi-person play and first-touch drafts. |
+| [prospect-radar](plugins/gtm/skills/prospect-radar/SKILL.md) | A standing radar: news, hiring and competitor-change feeds built from your ICP, read on a schedule, turned into sourced prospects and drafts. |
+| [pre-send-check](plugins/gtm/skills/pre-send-check/SKILL.md) | Eight checks before any outreach goes out, from a real pilot where none of five plausible drafts was sendable as written. |
 | [signal-prospecting](plugins/gtm/skills/signal-prospecting/SKILL.md) | Finding prospects from public signals (funding, hiring, launches) with a sourced, dated reason to contact each one. |
 | [outbound-sequences](plugins/gtm/skills/outbound-sequences/SKILL.md) | Designing an outbound sequence, with a deliverability pre-flight before a single email goes out. |
 
