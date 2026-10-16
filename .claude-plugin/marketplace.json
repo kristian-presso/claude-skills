@@ -16,7 +16,7 @@
         "repo": "kristian-presso/claude-operator-skills"
       },
       "description": "How an agent behaves when doing real work for a busy founder: challenge a bad brief, hand back solutions not problems, write guides and playbooks people can follow, and turn meetings into decisions and actions.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "category": "productivity",
       "keywords": [
         "agents",

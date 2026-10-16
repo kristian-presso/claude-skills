@@ -99,10 +99,10 @@ Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five 
 | Plugin | Skill | Score with | Without | Gain |
 | --- | --- | --- | --- | --- |
 | operator-discipline | pushback | 0.94 | 0.65 | +0.29 |
-| operator-discipline | solutions-shape | 0.84 | 0.71 | +0.14 |
+| operator-discipline | solutions-shape | 0.95 (was 0.84) | 0.63 (was 0.71) | +0.32 (was +0.14) |
 | operator-discipline | setup-guide | 0.98 | 0.74 | +0.24 |
 | operator-discipline | write-playbook | 0.92 | 0.58 | +0.34 |
-| operator-discipline | meeting-notes | 1.00 | 0.90 | +0.10 |
+| operator-discipline | meeting-notes | 0.99 (was 1.00) | 0.79 (was 0.90) | +0.20 (was +0.10) |
 | operator-discipline | level-up | 0.98 | 0.65 | +0.33 |
 | operator-starter | setup-operator | 1.00 | 0.83 | +0.17 |
 | operator-starter | weekly-review | 1.00 | 0.78 | +0.22 |
