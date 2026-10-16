@@ -1,0 +1,31 @@
+schema_version: '1.0'
+name: 02-full-context-pick-one
+tags:
+- level-up
+- fire
+- recommend
+runs: 3
+execution:
+  prompt: |
+    Level up time. Context so you don't need to ask: this week I copied web form leads into the CRM by hand about 15 times (2-3 minutes each), every Friday I chase overdue invoices by email for about an hour, I log into the payments dashboard most mornings to check revenue, and I write each onboarding email from scratch (about 3 a week, 20 minutes each). Nothing would really break at 10x except the lead copying. Just tell me what to do next.
+  max_turns: 4
+  timeout_seconds: 150
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-fired
+  tool: Skill
+  input_match: level-up
+- type: llm
+  name: one-pick-simplest-build
+  criteria: |
+    Pass only if ALL hold:
+    1. Exactly ONE recommended next automation, plus exactly one named runner-up (not three or four equal options).
+    2. The build method is the simplest that fits (a no-code automation, a scheduled job, or an existing tool feature), not an autonomous AI agent, for a fully specified task like copying form leads.
+    3. It gives a rough time-saved estimate derived from the user's own numbers.
+    4. It does not re-ask the questions the user already answered, and it does not start building.
+  weight: 2

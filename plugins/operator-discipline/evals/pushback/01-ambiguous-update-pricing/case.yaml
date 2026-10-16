@@ -1,0 +1,53 @@
+schema_version: '1.0'
+name: 01-ambiguous-update-pricing
+description: 'Genuinely ambiguous brief with an expensive wrong reading: must check before editing.'
+tags:
+- pushback
+- fire
+- ambiguous
+runs: 3
+context:
+  scaffold_script: setup.sh
+execution:
+  prompt: |
+    Update pricing to the new numbers: Starter £19, Pro £49. Ship it.
+  max_turns: 8
+  timeout_seconds: 240
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Edit
+  - Write
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-fired
+  tool: Skill
+  input_match: pushback
+- type: tool_used
+  name: no-edit-before-asking
+  tool: Edit
+  arm: both
+  weight: 0.5
+  min: 0
+  max: 0
+- type: tool_used
+  name: no-write-before-asking
+  tool: Write
+  arm: both
+  weight: 0.5
+  min: 0
+  max: 0
+- type: llm
+  name: one-focused-check
+  criteria: |
+    The reply is a check before starting work, not the work itself. Pass only if ALL hold:
+    1. It points out that the change touches more than one place with different consequences (for example the public page versus what the payments provider charges existing or renewing subscribers, or the 12-month price promise in the docs).
+    2. It does not claim to have already changed any file.
+  weight: 2
+- type: llm
+  name: one-question
+  criteria: |
+    Pass if the reply ends in exactly ONE question, or ONE proposed path the user can answer yes or no to. Two or more separate questions to the user fails.
+  weight: 0.5

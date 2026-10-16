@@ -1,0 +1,30 @@
+schema_version: '1.0'
+name: 02-vague-month-end
+tags:
+- write-playbook
+- fire
+- vague
+runs: 3
+execution:
+  prompt: |
+    Can you document how we do month-end so the new bookkeeper can take it over?
+  max_turns: 5
+  timeout_seconds: 150
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-fired
+  tool: Skill
+  input_match: write-playbook
+- type: llm
+  name: no-author-from-memory
+  criteria: |
+    Pass only if ALL hold:
+    1. The reply does NOT present a full generic month-end procedure as if it were this business's process.
+    2. Its preferred source is a real run: watching, screen-sharing or recording the current person doing an actual close (not only "tell me the steps" or "answer these questions").
+    3. It says that any step not observed in a real run will be marked as inferred or to be confirmed, OR that the draft will be proved by having the new bookkeeper run it.
+  weight: 2

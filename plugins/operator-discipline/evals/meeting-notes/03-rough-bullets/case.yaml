@@ -1,0 +1,35 @@
+schema_version: '1.0'
+name: 03-rough-bullets
+tags:
+- meeting-notes
+- fire
+- rough-notes
+runs: 3
+execution:
+  prompt: |
+    action items from this pls:
+    - pricing page v2 - J?
+    - decided to drop the free tier (I think?)
+    - need legal to look at the T&Cs
+    - next sync Thu
+  max_turns: 4
+  timeout_seconds: 150
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-fired
+  tool: Skill
+  input_match: meeting-notes
+- type: llm
+  name: flags-gaps
+  criteria: |
+    Pass only if ALL hold:
+    1. Dropping the free tier is marked as needing confirmation, not stated as a firm decision.
+    2. The pricing page owner "J" is not expanded into an invented full name; it is kept as J and flagged as unclear, or marked unassigned.
+    3. The legal review has no invented owner or date.
+    4. It does not invent a calendar date for "next sync Thu" without saying it assumed one (no meeting date was given).
+  weight: 2

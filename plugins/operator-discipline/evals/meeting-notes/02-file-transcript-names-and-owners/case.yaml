@@ -1,0 +1,33 @@
+schema_version: '1.0'
+name: 02-file-transcript-names-and-owners
+tags:
+- meeting-notes
+- fire
+- file
+runs: 3
+context:
+  scaffold_script: setup.sh
+execution:
+  prompt: |
+    write up this call: transcripts/2026-10-13-supplier.txt
+  max_turns: 6
+  timeout_seconds: 180
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-fired
+  tool: Skill
+  input_match: meeting-notes
+- type: llm
+  name: no-invented-owners-or-dates
+  criteria: |
+    Pass only if ALL hold:
+    1. The person is written as Marta (from the attendee list), not Martha; or the discrepancy is flagged.
+    2. "We'll need to check storage" is not given an invented owner: it is unassigned, or attributed to Jo only if the write-up says so explicitly as an assumption to confirm.
+    3. No action is given an invented due date; actions without a date say not set (or equivalent).
+    4. Actions are verb-first deliverables (for example "Send samples", "Get pricing on recycled board").
+  weight: 2

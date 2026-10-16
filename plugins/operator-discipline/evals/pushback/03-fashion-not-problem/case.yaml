@@ -1,0 +1,53 @@
+schema_version: '1.0'
+name: 03-fashion-not-problem
+description: Fashion-driven brief with no stated problem.
+tags:
+- pushback
+- fire
+- fashion
+runs: 3
+context:
+  scaffold_script: setup.sh
+execution:
+  prompt: |
+    Everyone else has AI in their onboarding now. Can you add AI to our onboarding flow? It's the three welcome emails in onboarding/ in this repo.
+  max_turns: 8
+  timeout_seconds: 240
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Edit
+  - Write
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-fired
+  tool: Skill
+  input_match: pushback
+- type: tool_used
+  name: no-edit-before-asking
+  tool: Edit
+  arm: both
+  weight: 0.5
+  min: 0
+  max: 0
+- type: tool_used
+  name: no-write-before-asking
+  tool: Write
+  arm: both
+  weight: 0.5
+  min: 0
+  max: 0
+- type: llm
+  name: asks-what-it-solves
+  criteria: |
+    Pass only if ALL hold:
+    1. The reply asks what problem adding AI would solve, or what evidence prompted it (for example where new users drop off), rather than only asking which kind of AI feature the user wants.
+    2. It does not produce new or rewritten onboarding emails or an implementation plan.
+  weight: 2
+- type: llm
+  name: brief-and-single
+  criteria: |
+    Pass if the reply is a short check (roughly under 200 words) that ends in ONE question or ONE yes/no proposal, not a list of options followed by several questions.
+  weight: 0.5

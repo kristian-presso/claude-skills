@@ -1,6 +1,6 @@
 ---
 name: pushback
-description: Checks a request before any work starts and, if it is vague, has more than one reasonable reading, contradicts a decision already made, or is costly to get wrong, asks one focused question or proposes a better path. Use when the user asks for something to be built, changed or set up, for example "build me X", "fix this", "can you set up X", "make X better", "tidy this up", "rework the admin views", "update pricing", "add AI to X", "just push it", or "what should I do about X"; and whenever an instruction has more than one reading, contradicts a documented decision, skips a workflow rule, follows fashion rather than a stated problem, or could cost real rework, money or something irreversible if read wrongly. Fires before starting work, never after.
+description: Gate to run before acting on any request to change, build, update, swap, migrate, publish or ship something. Reads the request against the files and decisions in front of it and, if it has more than one reasonable reading, touches several places with different consequences (a price that lives on a page and in billing), contradicts a documented decision such as a decision record or style guide, skips a workflow rule, or follows fashion rather than a stated problem ("add AI to X", "move to microservices"), sends one message with its reading, the risk and one question before any file is edited. Use for requests such as "update pricing", "swap X for Y", "switch to library Z", "rework the admin views", "make X better", "add AI to X", "just push it", "fix this" or "what should I do about X". Not for clear, cheap, reversible edits such as fixing a named typo, and not for plain questions.
 ---
 
 # Pushback
@@ -18,6 +18,12 @@ Nobody notices the moment it went wrong, because the moment it went wrong was si
 A principle like "push back when something is wrong" erodes under time pressure and social
 pressure. A gate that fires on named triggers does not. That is why this is written as
 triggers, not advice.
+
+## Before you decide
+
+Spend one or two reads before judging the brief: look for a decisions folder, decision
+records, a style guide or a README that states rules, and find every place the change
+would land. Most contradictions and expensive readings are only visible from there.
 
 ## When to push back
 

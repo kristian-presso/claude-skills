@@ -1,0 +1,5 @@
+# Bucket naming convention, agreed in the infra review:
+#   shopfront-<environment>-<purpose>
+buckets:
+  uploads: shopfront-production-uploads
+  backups: shopfront-production-backups

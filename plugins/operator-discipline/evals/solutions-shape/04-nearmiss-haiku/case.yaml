@@ -1,0 +1,30 @@
+schema_version: '1.0'
+name: 04-nearmiss-haiku
+tags:
+- solutions-shape
+- near-miss
+runs: 3
+execution:
+  prompt: |
+    Write a haiku about autumn.
+  max_turns: 3
+  timeout_seconds: 90
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-not-fired
+  tool: Skill
+  input_match: solutions-shape
+  min: 0
+  max: 0
+  arm: both
+  weight: 0.5
+- type: llm
+  name: does-the-task
+  criteria: |
+    Pass if the reply is a haiku about autumn (three short lines).
+  weight: 1

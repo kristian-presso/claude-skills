@@ -1,0 +1,15 @@
+Domain: getnorthbeam-mail.example  (registered 9 days ago, bought for cold outreach)
+Mailboxes: dana@getnorthbeam-mail.example, sam@getnorthbeam-mail.example (created 9 days ago, warm-up tool switched on 5 days ago)
+
+$ dig +short TXT getnorthbeam-mail.example
+"v=spf1 include:_spf.mailhost.example ~all"
+
+$ dig +short TXT google._domainkey.getnorthbeam-mail.example
+(no answer)
+
+$ dig +short TXT _dmarc.getnorthbeam-mail.example
+"v=DMARC1; p=none; rua=mailto:dmarc@getnorthbeam.example"
+
+Sending tool: unsubscribe link setting is OFF (we'd rather people just reply 'no thanks').
+List: 2,400 contacts bought from a data vendor, not verified. About 30% are @outlook.com / @hotmail.com addresses.
+Plan: start the 5-step sequence on Monday, 400 sends a day split across the two inboxes.

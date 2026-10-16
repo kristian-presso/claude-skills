@@ -1,0 +1,30 @@
+schema_version: '1.0'
+name: 03-low-value-process
+tags:
+- write-playbook
+- fire
+- pushback
+runs: 3
+execution:
+  prompt: |
+    Write an SOP for how I order printer paper. I do it about once a year.
+  max_turns: 4
+  timeout_seconds: 120
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-fired
+  tool: Skill
+  input_match: write-playbook
+- type: llm
+  name: pushes-back-once
+  criteria: |
+    Pass only if ALL hold:
+    1. The reply pushes back: this process is rare and low-stakes so it does not justify a playbook.
+    2. It suggests what would be worth documenting instead (or asks what critical recurring process exists), in one message.
+    3. It does not produce a full multi-section SOP for ordering paper.
+  weight: 2

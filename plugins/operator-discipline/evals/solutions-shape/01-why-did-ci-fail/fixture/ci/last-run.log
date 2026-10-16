@@ -1,0 +1,7 @@
+$ pytest -q
+ImportError while importing test module '/build/tests/test_totals.py'.
+tests/test_totals.py:1: in <module>
+    from invoicer.totals import gross_total
+E   ImportError: cannot import name 'gross_total' from 'invoicer.totals'
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.08s

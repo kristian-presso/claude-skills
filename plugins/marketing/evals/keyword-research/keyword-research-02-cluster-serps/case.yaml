@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: keyword-research-02-cluster-serps
+tags: [keyword-research, fire]
+context:
+  scaffold_script: setup.sh

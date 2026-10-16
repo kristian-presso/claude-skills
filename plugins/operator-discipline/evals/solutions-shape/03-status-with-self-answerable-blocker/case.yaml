@@ -1,0 +1,34 @@
+schema_version: '1.0'
+name: 03-status-with-self-answerable-blocker
+tags:
+- solutions-shape
+- fire
+- status
+runs: 3
+context:
+  scaffold_script: setup.sh
+execution:
+  prompt: |
+    status? where are we on the export feature
+  max_turns: 10
+  timeout_seconds: 240
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Edit
+  - Write
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-fired
+  tool: Skill
+  input_match: solutions-shape
+- type: llm
+  name: resolves-not-forwards
+  criteria: |
+    Pass only if ALL hold:
+    1. It gives the state of the work (CSV writer and download button done; storage upload and email left).
+    2. For the bucket-name blocker it does NOT just forward the question to the user. It proposes a specific answer derived from the repo's naming convention (shopfront-production-exports, or the same pattern) as its recommendation.
+    3. It names one next action (done or about to be done), not an open-ended "what would you like to do?".
+  weight: 2

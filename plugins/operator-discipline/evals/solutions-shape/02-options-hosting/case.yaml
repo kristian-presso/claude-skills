@@ -1,0 +1,30 @@
+schema_version: '1.0'
+name: 02-options-hosting
+tags:
+- solutions-shape
+- fire
+- options
+runs: 3
+execution:
+  prompt: |
+    What are my options for hosting a small Python API? About 200 requests a day, I'm a solo dev and budget matters.
+  max_turns: 4
+  timeout_seconds: 150
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-fired
+  tool: Skill
+  input_match: solutions-shape
+- type: llm
+  name: one-pick-first
+  criteria: |
+    Pass only if ALL hold:
+    1. The FIRST thing after at most one sentence of framing is a single recommended option, explicitly labelled as the recommendation (for example "Recommendation:" or "Pick X"). A reply that opens with a categorised list or comparison of options, even if one item says "my top pick", fails.
+    2. It gives a reason why that pick beats the alternatives for this specific case (volume, solo developer, budget).
+    3. It does not end with an open-ended question such as "what matters most to you?" or "let me know which you prefer".
+  weight: 2
