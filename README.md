@@ -52,11 +52,13 @@ For people building with Claude and MCP.
 
 ### [gtm](https://github.com/kristian-presso/claude-gtm-skills)
 
-Outbound for founders and small B2B teams.
+Go-to-market for anyone selling B2B: founders, account executives with a named territory, account managers growing a book.
 
 | Skill | Use it when |
 | --- | --- |
+| [gtm-motion](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/gtm-motion/SKILL.md) | Designing the motion: ICP, tiered accounts, weighted buying signals, personas and a weekly routine. |
 | [signal-prospecting](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/signal-prospecting/SKILL.md) | Finding prospects from public signals (funding, hiring, launches) with a sourced, dated reason to contact each one. |
+| [account-play](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/account-play/SKILL.md) | Planning one account: who decides, two or three proposed use cases, a multi-person play and first-touch drafts. |
 | [outbound-sequences](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/outbound-sequences/SKILL.md) | Designing an outbound sequence, with a deliverability pre-flight before a single email goes out. |
 
 ### [marketing](https://github.com/kristian-presso/claude-marketing-skills)
@@ -100,7 +102,9 @@ Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five 
 | agent-builder | agent-security | 1.00 | 0.96 | +0.04 |
 | agent-builder | ship-with-agents | 0.93 | 0.64 | +0.29 |
 | agent-builder | skill-builder | 0.93 | 0.86 | +0.07 |
+| gtm | gtm-motion | 0.98 | 0.82 | +0.15 |
 | gtm | signal-prospecting | 0.92 | 0.65 | +0.27 |
+| gtm | account-play | 0.95 | 0.68 | +0.27 |
 | gtm | outbound-sequences | 1.00 | 0.77 | +0.23 |
 | marketing | ai-search-visibility | 0.96 | 0.44 | +0.52 |
 | marketing | keyword-research | 1.00 | 0.64 | +0.36 |

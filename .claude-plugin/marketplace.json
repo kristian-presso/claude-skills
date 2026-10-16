@@ -68,14 +68,16 @@
         "source": "github",
         "repo": "kristian-presso/claude-gtm-skills"
       },
-      "description": "Outbound for founders and small B2B teams: find prospects from public signals with a sourced reason to contact each, and run sequences that do not burn your sending domains.",
-      "version": "0.1.0",
+      "description": "Go-to-market for anyone selling B2B: design the motion (ICP, tiers, signals, weekly routine), find prospects with a sourced reason to contact each, plan multi-person account plays with proposed use cases, and run sequences that do not burn your sending domains.",
+      "version": "0.2.0",
       "category": "sales",
       "keywords": [
         "sales",
         "outbound",
         "prospecting",
-        "deliverability"
+        "deliverability",
+        "icp",
+        "account-planning"
       ],
       "homepage": "https://github.com/kristian-presso/claude-gtm-skills"
     },
