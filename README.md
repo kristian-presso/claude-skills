@@ -109,11 +109,11 @@ Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five 
 | operator-starter | setup-operator | 1.00 | 0.83 | +0.17 |
 | operator-starter | weekly-review | 1.00 | 0.78 | +0.22 |
 | operator-starter | always-on-mac | 1.00 | 0.80 | +0.20 |
-| agent-builder | mcp-server-builder | 0.95 | 0.86 | +0.09 |
+| agent-builder | mcp-server-builder | 0.90 (was 0.95) | 0.76 (was 0.86) | +0.14 (was +0.09) |
 | agent-builder | mcp-app-builder | 0.96 | 0.71 | +0.25 |
-| agent-builder | agent-security | 1.00 | 0.96 | +0.04 |
+| agent-builder | agent-security | 0.99 (was 1.00) | 0.88 (was 0.96) | +0.11 (was +0.04) |
 | agent-builder | ship-with-agents | 0.93 | 0.64 | +0.29 |
-| agent-builder | skill-builder | 0.93 | 0.86 | +0.07 |
+| agent-builder | skill-builder | 0.93 | 0.69 (was 0.86) | +0.24 (was +0.07) |
 | gtm | gtm-motion | 0.98 | 0.82 | +0.15 |
 | gtm | signal-prospecting | 0.92 | 0.65 | +0.27 |
 | gtm | account-play | 0.95 | 0.68 | +0.27 |
@@ -130,7 +130,7 @@ Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five 
 | uk-business | cash-runway | 1.00 | 0.43 | +0.57 |
 | eu-business | eu-company-guide | 1.00 | 0.75 | +0.25 |
 
-Small gains mean plain Claude already does well there; those skills earn their place on the cases it gets wrong. The eval cases live in each department repository's `evals/` folder, so you can re-run them yourself:
+mcp-server-builder, agent-security and skill-builder were re-scored on 16/10/2026 with harder cases (nine, nine and eight instead of five) where an expert answer differs from a generalist one; the "was" figures are the original five-case scores. On the same harder cases their previous versions gained only +0.06, +0.02 and +0.15. Small gains mean plain Claude already does well there; those skills earn their place on the cases it gets wrong. The eval cases live in each department repository's `evals/` folder, so you can re-run them yourself:
 
 ```bash
 git clone https://github.com/kristian-presso/claude-marketing-skills

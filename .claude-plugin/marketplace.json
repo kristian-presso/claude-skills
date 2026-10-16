@@ -52,7 +52,7 @@
         "repo": "kristian-presso/claude-agent-builder"
       },
       "description": "MCP servers and MCP Apps that ship and get listed, agent security that removes risk rather than describing it, a loop for shipping real work with coding agents, and turning a manual process into a skill.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "category": "development",
       "keywords": [
         "mcp",
