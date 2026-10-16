@@ -69,6 +69,43 @@ Running a small UK limited company. Reference, not advice: every figure carries 
 | [uk-deadlines](plugins/uk-business/skills/uk-deadlines/SKILL.md) | You want your company's own filing calendar for the next 12 months. |
 | [cash-runway](plugins/uk-business/skills/cash-runway/SKILL.md) | You want to know how much cash is yours after VAT, Corporation Tax and PAYE, and how long it lasts. |
 
+## Tested, not just written
+
+Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five cases per skill (three it should handle, two near-misses it must leave alone), each run three times with the skill and three times without, graded by a separate model. A skill ships only if Claude does better with it than without it. Results from 16/10/2026:
+
+| Plugin | Skill | Score with | Without | Gain |
+| --- | --- | --- | --- | --- |
+| operator-discipline | pushback | 0.94 | 0.65 | +0.29 |
+| operator-discipline | solutions-shape | 0.84 | 0.71 | +0.14 |
+| operator-discipline | setup-guide | 0.98 | 0.74 | +0.24 |
+| operator-discipline | write-playbook | 0.92 | 0.58 | +0.34 |
+| operator-discipline | meeting-notes | 1.00 | 0.90 | +0.10 |
+| operator-discipline | level-up | 0.98 | 0.65 | +0.33 |
+| agent-builder | mcp-server-builder | 0.95 | 0.86 | +0.09 |
+| agent-builder | mcp-app-builder | 0.96 | 0.71 | +0.25 |
+| agent-builder | agent-security | 1.00 | 0.96 | +0.04 |
+| agent-builder | ship-with-agents | 0.93 | 0.64 | +0.29 |
+| agent-builder | skill-builder | 0.93 | 0.86 | +0.07 |
+| gtm | signal-prospecting | 0.92 | 0.65 | +0.27 |
+| gtm | outbound-sequences | 1.00 | 0.77 | +0.23 |
+| marketing | ai-search-visibility | 0.96 | 0.44 | +0.52 |
+| marketing | keyword-research | 1.00 | 0.64 | +0.36 |
+| marketing | content-atomisation | 0.95 | 0.35 | +0.60 |
+| marketing | linkedin-post | 0.93 | 0.21 | +0.72 |
+| marketing | seo-schema-gate | 0.94 | 0.63 | +0.32 |
+| uk-business | uk-company-guide | 1.00 | 0.83 | +0.17 |
+| uk-business | uk-deadlines | 0.97 | 0.63 | +0.34 |
+| uk-business | cash-runway | 1.00 | 0.43 | +0.57 |
+
+Small gains mean plain Claude already does well there; those skills earn their place on the cases it gets wrong. The eval cases live in each plugin's `evals/` folder, so you can re-run them yourself:
+
+```bash
+cd plugins/marketing
+claude plugin eval . --trust-plugin --scaffold --ablation with-without --runs 3 --no-publish
+```
+
+Bundled scripts have their own unit tests (standard-library Python) in each plugin's `tests/` folder, run on every push.
+
 ## Using them in the Claude app
 
 On claude.ai or the Claude desktop app, download this repository as a zip (Code, then Download ZIP), take the folder of the skill you want (the one containing `SKILL.md`), zip that folder on its own and upload it in your skills settings. Each skill works on its own.

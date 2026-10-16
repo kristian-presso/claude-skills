@@ -22,3 +22,9 @@ jobs:
       - name: Manifests are valid JSON
         run: |
           python3 -c "import json,glob; [json.load(open(p)) for p in ['.claude-plugin/marketplace.json', *glob.glob('plugins/*/.claude-plugin/plugin.json')]]"
+      - name: Script unit tests
+        run: |
+          for t in plugins/*/tests; do
+            echo "== $t"
+            (cd "$(dirname "$t")" && python3 -I -m unittest discover -s tests)
+          done
