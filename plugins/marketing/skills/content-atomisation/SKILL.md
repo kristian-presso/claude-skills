@@ -1,6 +1,6 @@
 ---
 name: content-atomisation
-description: Turns one long piece of content (a blog post, guide, report, talk transcript or podcast) into a sequenced, channel-by-channel plan of standalone derivative pieces, each with one claim, one link back and one call to action, then drafts them on request. Use when someone says "repurpose this", "atomise this post", "turn this into social posts", "content plan from this article", "break this into channel pieces", "derivative content", or "what can I get out of this one piece".
+description: Turns one long piece of content (a blog post, guide, report, talk transcript or podcast) into a sequenced, channel-by-channel plan of standalone derivative pieces, each with one claim, one link back and one call to action, then drafts them on request. Use when someone says "repurpose this", "atomise this post", "turn this into social posts", "content plan from this article", "break this into channel pieces", "derivative content", "what can I get out of this one piece", or asks to check or fix an existing repurposing plan, content map or derivative schedule before it is scheduled.
 ---
 
 # Content atomisation
@@ -20,6 +20,9 @@ a page that is not live yet.
 2. **Distinct angles, not paraphrases.** Each piece answers a different reader question.
    If two rows say the same thing in different words, cut one.
 3. **No padding.** If the source has one real point, the map has one derivative. Say so.
+   Supporting lines (the evidence, a restatement, the rule of thumb that follows from it)
+   are not extra points: a 100-word opinion piece gets the hub plus one or two pieces, even
+   when the person asks for a post a day.
    A 600-word opinion piece might support one or two; a 3,000-word guide might support
    eight.
 4. **Hub first.** The long-form piece (the hub) publishes before any derivative, and every
@@ -48,12 +51,12 @@ One row per piece. Read `references/channel-formats.md` for what each channel ne
 | Field | Rule |
 | --- | --- |
 | `sequence` | 1 is the hub. Derivatives start at 2, in publish order. |
-| `lag_days` | Days after the hub publishes. Hub is 0. Derivatives 1 or more, never going backwards. |
+| `lag_days` | Days after the hub publishes, always a number. Hub is 0. Derivatives 1 or more, never going backwards. For a channel on a fixed schedule (a monthly newsletter), use the first send on or after the pacing default and say which send you assumed; never write "TBC" or "next send". |
 | `channel` | Where it goes: linkedin, x, email, newsletter, short-video, carousel, podcast, blog. |
 | `format` | single post, thread, teaser, talking head, 8-slide carousel, and so on. |
 | `angle` | The reader question this piece answers. Must differ from every other row. |
-| `core_claim` | One sentence. The single claim this piece makes. |
-| `link_target` | The one URL this piece sends people to: the hub, or a related page that links to the hub. |
+| `core_claim` | One sentence. The single claim this piece makes. Two facts joined with "and" are two claims: pick one. |
+| `link_target` | The one URL this piece sends people to, written out in full: the hub, or a related page that links to the hub. |
 | `cta` | One specific action, aligned with the link. |
 
 Match each distinct point from Step 1 to the channel where it works best: a surprising
@@ -65,6 +68,9 @@ short video 5 to 7, carousel 7 to 10, audio 14 to 21, and no more than one piece
 channel per week from the same source.
 
 ## Step 3: validate the map
+
+If the person hands you an existing map to check, start here: run the checks below on their
+map and report each problem by row, including any derivative scheduled on the hub's own day.
 
 If you can run scripts, write the map as TSV (fields in the order `sequence`, `lag_days`,
 `channel`, `format`, `core_claim`, `link_target`, `cta`) and run:

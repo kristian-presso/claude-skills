@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: seo-schema-gate-05-neg-why-not-cited
+tags: [seo-schema-gate, no-fire]
+context:
+  scaffold_script: setup.sh

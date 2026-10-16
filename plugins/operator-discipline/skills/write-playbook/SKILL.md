@@ -26,8 +26,11 @@ Write a playbook only for a process that passes at least two of these:
   wrong.
 - **It is about to be handed to someone new,** a hire, a contractor, or an agent.
 
-If the request is for a process that passes none of these, push back once: say which
-process you would document instead and why.
+If the request passes fewer than two, do not write the playbook. Push back once, in one
+short message: say why it does not earn a playbook (for example, it happens once a year
+and getting it wrong costs little), and name the process you would document instead, or
+ask which critical recurring process they have. A one-line note in a task list or
+calendar reminder is the right home for a rare, low-stakes job.
 
 ## The three stages
 

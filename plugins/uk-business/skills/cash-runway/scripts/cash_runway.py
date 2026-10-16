@@ -37,13 +37,14 @@ def parse_date(s):
 def parse_amount(s):
     if s is None:
         return None
-    s = s.strip()
+    s = s.strip().replace("\u2212", "-")
     if not s:
         return None
     neg = s.startswith("(") and s.endswith(")")
     s2 = re.sub(r"[£$€,\s()]", "", s)
-    suffix = ""
-    m = re.match(r"^(-?[\d.]+)(CR|DR)?$", s2, re.I)
+    if s2.endswith("-") and not s2.startswith("-"):
+        s2 = "-" + s2[:-1]  # some banks print a trailing minus: 1,234.56-
+    m = re.match(r"^([+-]?(?:\d+\.?\d*|\.\d+))(CR|DR)?$", s2, re.I)
     if not m:
         raise ValueError(f"unrecognised amount: {s!r}")
     v = float(m.group(1))
@@ -53,26 +54,35 @@ def parse_amount(s):
     return v
 
 
-def find_col(headers, wanted, override=None):
+def find_col(headers, wanted, override=None, taken=()):
+    """Pick the header for a field: an explicit override, then an exact name, then a
+    header containing the wanted name as whole words. Columns already assigned to
+    another field are skipped, so 'Value Date' is never read as an amount."""
     if override:
         for h in headers:
             if h.strip().lower() == override.strip().lower():
                 return h
         sys.exit(f"column {override!r} not found; headers are {headers}")
-    low = {h: h.strip().lower() for h in headers}
+    free = [h for h in headers if h not in taken]
+    low = {h: h.strip().lower() for h in free}
     for w in wanted:
         for h, l in low.items():
             if l == w:
                 return h
     for w in wanted:
+        rx = re.compile(r"(?<![a-z0-9])" + re.escape(w) + r"(?![a-z0-9])")
         for h, l in low.items():
-            if w in l:
+            if rx.search(l):
                 return h
     return None
 
 
 def read_csv(path, a):
-    with open(path, newline="", encoding="utf-8-sig") as f:
+    try:
+        f = open(path, newline="", encoding="utf-8-sig")
+    except OSError as e:
+        sys.exit(f"cannot read {path}: {e.strerror}")
+    with f:
         sample = f.read(4096)
         f.seek(0)
         try:
@@ -81,12 +91,20 @@ def read_csv(path, a):
             dialect = csv.excel
         r = csv.DictReader(f, dialect=dialect)
         headers = r.fieldnames or []
-        c_date = find_col(headers, ["date", "transaction date", "posting date", "value date"], a.date_col)
-        c_amt = find_col(headers, ["amount", "value", "amount (gbp)"], a.amount_col)
-        c_in = find_col(headers, ["paid in", "money in", "credit", "credit amount", "in"], a.in_col)
-        c_out = find_col(headers, ["paid out", "money out", "debit", "debit amount", "out"], a.out_col)
-        c_bal = find_col(headers, ["balance", "running balance"], a.balance_col)
-        c_desc = find_col(headers, ["description", "details", "narrative", "memo", "reference", "name", "payee"], a.desc_col)
+        taken = []
+
+        def pick(wanted, override):
+            c = find_col(headers, wanted, override, taken)
+            if c:
+                taken.append(c)
+            return c
+
+        c_date = pick(["date", "transaction date", "posting date", "value date"], a.date_col)
+        c_bal = pick(["balance", "running balance"], a.balance_col)
+        c_in = pick(["paid in", "money in", "credit", "credit amount", "in"], a.in_col)
+        c_out = pick(["paid out", "money out", "debit", "debit amount", "out"], a.out_col)
+        c_amt = pick(["amount", "value", "amount (gbp)"], a.amount_col)
+        c_desc = pick(["description", "details", "narrative", "memo", "reference", "name", "payee"], a.desc_col)
         if not c_date:
             sys.exit(f"no date column found; headers are {headers}. Use --date-col.")
         if not c_amt and not (c_in or c_out):
@@ -96,14 +114,18 @@ def read_csv(path, a):
             raw = (row.get(c_date) or "").strip()
             if not raw:
                 continue
-            d = parse_date(raw)
-            if c_amt and (row.get(c_amt) or "").strip():
-                amt = parse_amount(row[c_amt])
-            else:
-                pin = parse_amount(row.get(c_in)) if c_in else None
-                pout = parse_amount(row.get(c_out)) if c_out else None
-                amt = (pin or 0.0) - abs(pout or 0.0)
-            bal = parse_amount(row.get(c_bal)) if c_bal else None
+            line = i + 2  # the header is line 1
+            try:
+                d = parse_date(raw)
+                if c_amt and (row.get(c_amt) or "").strip():
+                    amt = parse_amount(row[c_amt])
+                else:
+                    pin = parse_amount(row.get(c_in)) if c_in else None
+                    pout = parse_amount(row.get(c_out)) if c_out else None
+                    amt = (pin or 0.0) - abs(pout or 0.0)
+                bal = parse_amount(row.get(c_bal)) if c_bal else None
+            except ValueError as e:
+                sys.exit(f"line {line} of {path}: {e}. Fix the row, or name the right columns with --date-col/--amount-col.")
             desc = (row.get(c_desc) or "") if c_desc else ""
             rows.append({"i": i, "date": d, "amt": amt, "bal": bal, "desc": desc})
     if not rows:
@@ -141,6 +163,12 @@ def main(argv=None):
     for c in ["date", "amount", "in", "out", "balance", "desc"]:
         p.add_argument(f"--{c}-col", dest=f"{c}_col", help=f"name of the {c} column if not detected")
     a = p.parse_args(argv)
+    if a.window_days < 1:
+        p.error("--window-days must be 1 or more")
+    try:
+        pat = re.compile(a.exclude, re.I) if a.exclude else None
+    except re.error as e:
+        p.error(f"--exclude is not a valid regular expression: {e}")
 
     cash = a.balance
     as_of = None
@@ -156,7 +184,6 @@ def main(argv=None):
         if start < first:
             start = first
         span = (last - start).days + 1
-        pat = re.compile(a.exclude, re.I) if a.exclude else None
         tin = tout = 0.0
         by_month = defaultdict(lambda: [0.0, 0.0])
         for r in rows:

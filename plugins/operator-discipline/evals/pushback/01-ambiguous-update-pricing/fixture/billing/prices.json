@@ -1,0 +1,4 @@
+{
+  "starter_monthly": {"amount_pence": 1500, "applies_to": "new and renewing subscribers"},
+  "pro_monthly": {"amount_pence": 3900, "applies_to": "new and renewing subscribers"}
+}

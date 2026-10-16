@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: linkedin-post-03-cut-mode
+tags: [linkedin-post, fire]
+context:
+  scaffold_script: setup.sh

@@ -89,7 +89,8 @@ Read `references/hooks.md` for opening patterns that work and ones to drop.
 
 - [ ] Reads like their samples, not like a template. Read it against two of them.
 - [ ] One point, stated in the opening line.
-- [ ] Every fact and number came from the person.
+- [ ] Every fact, number and anecdote came from the person. Do not invent what customers
+      did or said ("most never opened it") to fill a gap; mark it `[ADD: ...]`.
 - [ ] Within the chosen length.
 - [ ] No phrase from the "drop" list in `references/hooks.md`.
 - [ ] Spelling and punctuation follow their locale and habits.

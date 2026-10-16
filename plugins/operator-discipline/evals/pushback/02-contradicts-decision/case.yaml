@@ -1,0 +1,56 @@
+schema_version: '1.0'
+name: 02-contradicts-decision
+description: Request contradicts a documented decision record.
+tags:
+- pushback
+- fire
+- decision
+runs: 3
+context:
+  scaffold_script: setup.sh
+execution:
+  prompt: |
+    Swap our date formatting over to dayjs, it's much nicer to work with.
+  max_turns: 10
+  timeout_seconds: 240
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Edit
+  - Write
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-fired
+  tool: Skill
+  input_match: pushback
+- type: tool_used
+  name: no-edit-before-asking
+  tool: Edit
+  arm: both
+  weight: 0.5
+  min: 0
+  max: 0
+- type: tool_used
+  name: no-write-before-asking
+  tool: Write
+  arm: both
+  weight: 0.5
+  min: 0
+  max: 0
+- type: llm
+  name: names-the-decision-1
+  criteria: |
+    Pass if this is true of the reply: The reply names the existing decision that forbids new runtime dependencies (decision 0007, or "no new runtime dependencies until v2").
+  weight: 0.667
+- type: llm
+  name: names-the-decision-2
+  criteria: |
+    Pass if this is true of the reply: It asks the user whether the decision is being reversed or overridden, or offers an alternative that respects it (for example an Intl.DateTimeFormat helper). Offering both in the same question is fine.
+  weight: 0.667
+- type: llm
+  name: names-the-decision-3
+  criteria: |
+    Pass if this is true of the reply: It does not say it has installed dayjs or rewritten the formatting.
+  weight: 0.667

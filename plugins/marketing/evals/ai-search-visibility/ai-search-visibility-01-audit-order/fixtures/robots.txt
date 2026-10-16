@@ -1,0 +1,17 @@
+# robots.txt for oakfield-venues.example
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: ChatGPTBot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: *
+Disallow: /
+
+Sitemap: https://oakfield-venues.example/sitemap.xml

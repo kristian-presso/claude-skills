@@ -51,8 +51,17 @@ def parse_date(s):
 
 
 def parse_dm(s):
-    d, m = s.split("-")
-    return int(d), int(m)
+    """Day and month as DD-MM (DD/MM and DD.MM also accepted)."""
+    if isinstance(s, tuple):
+        return s
+    parts = str(s).strip().replace("/", "-").replace(".", "-").split("-")
+    try:
+        d, m = (int(x) for x in parts)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"expected a day and month as DD-MM, got {s!r}")
+    if not 1 <= m <= 12 or not 1 <= d <= calendar.monthrange(2024, m)[1]:
+        raise argparse.ArgumentTypeError(f"{s!r} is not a real day and month")
+    return d, m
 
 
 def year_end_on(y, dm):
@@ -208,22 +217,35 @@ def to_ics(rows, remind_days):
             "END:VEVENT",
         ]
     out.append("END:VCALENDAR")
-    return "\r\n".join(out) + "\r\n"
+    return "\r\n".join(_fold(x) for x in out) + "\r\n"
 
 
 def _esc(s):
     return s.replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,").replace("\n", "\\n")
 
 
+def _fold(line):
+    """Fold a content line to 75 octets, as RFC 5545 section 3.1 requires."""
+    out, cur = [], b""
+    for ch in line:
+        b = ch.encode("utf-8")
+        if len(cur) + len(b) > (75 if not out else 74):
+            out.append(cur.decode("utf-8"))
+            cur = b""
+        cur += b
+    out.append(cur.decode("utf-8"))
+    return "\r\n ".join(out)
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description="12-month UK company filing calendar (reference, not advice).")
     p.add_argument("--incorporated", type=parse_date, required=True, help="incorporation date, YYYY-MM-DD")
-    p.add_argument("--year-end", help="accounting reference date, DD-MM (default: Companies House default)")
+    p.add_argument("--year-end", type=parse_dm, help="accounting reference date, DD-MM (default: Companies House default)")
     p.add_argument("--first-period-end", type=parse_date, help="override the first accounting period end, YYYY-MM-DD")
     p.add_argument("--last-confirmation", type=parse_date, help="date of the last confirmation statement, YYYY-MM-DD")
     p.add_argument("--vat", default="none", choices=["none", "1", "2", "3", "monthly", "annual"],
                    help="VAT stagger: 1 = quarters end Mar/Jun/Sep/Dec, 2 = Apr/Jul/Oct/Jan, 3 = May/Aug/Nov/Feb")
-    p.add_argument("--vat-year-end", help="for --vat annual: VAT year end, DD-MM")
+    p.add_argument("--vat-year-end", type=parse_dm, help="for --vat annual: VAT year end, DD-MM")
     p.add_argument("--employer", action="store_true", help="company runs a payroll")
     p.add_argument("--director-sa", action="store_true", help="include the director's own Self Assessment dates")
     p.add_argument("--today", type=parse_date, default=D.today(), help="start date, YYYY-MM-DD (default today)")
@@ -231,6 +253,14 @@ def main(argv=None):
     p.add_argument("--ics", help="also write an .ics calendar file to this path")
     p.add_argument("--remind-days", type=int, default=14, help="reminder lead time in the .ics file")
     a = p.parse_args(argv)
+    if a.months < 1:
+        p.error("--months must be 1 or more")
+    if a.remind_days < 0:
+        p.error("--remind-days cannot be negative")
+    if a.incorporated > a.today:
+        p.error("--incorporated is after --today")
+    if a.vat == "annual" and not a.vat_year_end:
+        p.error("--vat annual needs --vat-year-end DD-MM")
     rows, fpe, horizon = build(a)
     print(f"Calendar {fmt(a.today)} to {fmt(horizon)}. First accounting period end used: {fmt(fpe)}.")
     print(to_markdown(rows, a.today))

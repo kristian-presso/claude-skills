@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: seo-schema-gate-02-write-frontmatter
+tags: [seo-schema-gate, fire]
+context:
+  scaffold_script: setup.sh

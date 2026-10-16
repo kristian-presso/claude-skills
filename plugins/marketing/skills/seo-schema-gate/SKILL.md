@@ -28,6 +28,10 @@ Standard library only. Prints PASS, WARN or FAIL per item and exits non-zero on 
 it can sit in CI. If you cannot run scripts, fetch the page and apply the checklist by
 reading; the parse step below is the one you must not skip.
 
+Every validation answer ends the same way: name Google's Rich Results Test and the
+Schema.org validator for the vocabulary check (your parse only proves the JSON is well
+formed), and say to re-check the live URL once it is published.
+
 ## The checklist
 
 ### Meta

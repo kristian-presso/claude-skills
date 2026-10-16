@@ -1,6 +1,6 @@
 ---
 name: signal-prospecting
-description: Finds B2B prospects from public business signals (funding rounds, hiring posts, product launches, leadership changes, tech-stack changes), identifies the right contact at each account, and proposes one specific use case per account with every claim sourced and dated. Use when someone asks to "find prospects", "build a target list", "who should I reach out to", "find companies that just raised", "find accounts hiring for X", "research this list of companies before outreach", or has a generic list and wants a reason to contact each account now.
+description: Finds B2B prospects from public business signals (funding rounds, hiring posts, product launches, leadership changes, tech-stack changes), identifies the right contact at each account, and proposes one specific use case per account with every claim sourced and dated. Use when someone asks to "find prospects", "build a target list", "who should I reach out to", "find companies that just raised", "find accounts hiring for X", "research this list of companies before outreach", "give me a reason to contact them and an opening line", or has a list of accounts and wants a reason to contact each one now.
 ---
 
 # Signal prospecting
@@ -77,7 +77,9 @@ the date for every hit.
 - pasted text: job posts, news items, a newsletter, an export.
 
 Then work only from what they give you, and say clearly which claims could not be
-checked.
+checked. Do not wait for the list to do the parts that need no search: recommend the
+buyer role (Step 1: the person who feels the problem, and why at this company size) and
+the signals to look for, so the user can act on them straight away.
 
 Aim for 10 to 25 candidate accounts. Stop collecting when you have enough to work
 properly; more accounts with thinner research is a worse result.
@@ -91,7 +93,9 @@ Drop any account that:
 - only has a signal older than 90 days with nothing fresher, or
 - has a signal that does not actually connect to the offer's problem.
 
-Say how many you dropped and why, in one line.
+A strong, fresh signal does not rescue an account that fails the ideal-account definition
+(too big, too small, wrong region). Drop it; do not rank it as a "long shot" above
+accounts that fit. Say how many you dropped and why, in one line.
 
 ## Step 4: Find the right contact
 
@@ -111,6 +115,12 @@ Write one or two sentences per account that connect the signal to the offer:
 
 > Because [signal, with source and date], they probably now face [specific problem].
 > [Offer] helps by [specific outcome].
+
+Fill all three parts for every account, with the source and date written into the
+sentence itself. A timing-only signal (a new executive, a funding round) still needs the
+specific problem the offer solves for that person, for example a new finance lead and the
+labour-cost line a rota tool cuts. If you cannot name that problem, say the signal gives
+timing but no reason, and rank the account lower.
 
 Be concrete. "They could benefit from better tooling" is not a use case. "They are
 hiring three support agents in Manila (careers page, 02/10/2026), so they are about to

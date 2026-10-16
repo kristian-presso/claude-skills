@@ -27,6 +27,11 @@ anyone now, start with the `signal-prospecting` skill and come back here.
 - Setting up a new sending domain or inbox for cold outreach.
 - Checking a programme against the law in the recipient's country before it starts.
 
+**Reviewing a sequence that is not working?** Say first that open rates are not a signal
+of interest: mail privacy features load tracking pixels automatically, so opens are
+inflated and unreliable. Judge it on replies. Then check it against the touch and
+first-email rules below and the deliverability pre-flight.
+
 ## How to design a sequence
 
 Work through these steps with the user. Ask only for what you do not already have.

@@ -1,0 +1,7 @@
+Doppler setup notes (scratch, delete later)
+- installed the CLI with brew
+- doppler login, picked the workplace
+- doppler setup in repo root, chose project shopfront, config dev
+- created a service token for CI: dp.st.dev.Zk81QpLw0rTnB7xYc2VdHs9aFe4Mj6Ku
+- npm run dev now via `doppler run -- npm run dev`
+- gotcha: first time it picked config prd, had to rerun doppler setup

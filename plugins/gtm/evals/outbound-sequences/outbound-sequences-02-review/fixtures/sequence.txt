@@ -1,0 +1,24 @@
+Step 1 (day 1)
+Subject: Re: our conversation
+Hi {{first_name}},
+I'm reaching out because {{company}} is a leader in your space. We're Northbeam, the all-in-one platform for
+scheduling, CRM, invoicing, reporting, payroll, inventory and marketing automation, trusted by 500+ businesses.
+Our features include: AI scheduling, smart invoicing, 40+ integrations, custom dashboards, role-based access,
+mobile apps, and 24/7 support. I'd love to book 30 minutes on your calendar this week for a full demo so I can
+walk you through everything. Here's my calendar link: cal.example/northbeam-demo
+
+Step 2 (day 2)
+Subject: Re: our conversation
+Just bumping this to the top of your inbox!
+
+Step 3 (day 3)
+Subject: Re: our conversation
+Did you see my last two emails? Would love 30 minutes.
+
+Step 4 (day 4)
+Subject: Re: our conversation
+Bumping again in case this got buried.
+
+Step 5 (day 5)
+Subject: Last try
+Should I close your file?

@@ -1,6 +1,6 @@
 ---
 name: keyword-research
-description: Turns a handful of seed topics into a clustered keyword map - expanded terms, a demand tier, search intent, one target page per cluster, and where the gaps are - on a free stack with no paid SEO tool required. Uses Google Search Console, Keyword Planner, Google Trends and live search results when available, and any connected SEO tool if there is one. Use when someone asks "what should we write about", "keyword research", "build a keyword map", "what keywords should we target", "find content gaps", "which topics have demand", or wants to plan a blog or landing pages around search.
+description: Turns a handful of seed topics into a clustered keyword map - expanded terms, a demand tier, search intent, one target page per cluster, and where the gaps are - on a free stack with no paid SEO tool required. Uses Google Search Console, Keyword Planner, Google Trends and live search results when available, and any connected SEO tool if there is one. Use when someone asks "what should we write about", "keyword research", "build a keyword map", "what keywords should we target", "find content gaps", "which topics have demand", "two of our pages compete for the same keyword", "should we write another post for this term", or wants to plan a blog or landing pages around search or fix keyword cannibalisation.
 ---
 
 # Keyword research

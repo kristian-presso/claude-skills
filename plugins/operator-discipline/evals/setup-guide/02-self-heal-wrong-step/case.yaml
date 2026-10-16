@@ -1,0 +1,47 @@
+schema_version: '1.0'
+name: 02-self-heal-wrong-step
+tags:
+- setup-guide
+- fire
+- self-heal
+runs: 3
+context:
+  scaffold_script: setup.sh
+execution:
+  prompt: |
+    I'm following docs/setup/stripe-webhooks.md. Step 3 is wrong, the flag is --forward-to not --forward. Worked once I changed it. Anyway, moving on: what's the command to fire a test checkout event at it?
+  max_turns: 10
+  timeout_seconds: 240
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Edit
+  - Write
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-fired
+  tool: Skill
+  input_match: setup-guide
+- type: regex
+  name: guide-step-fixed
+  pattern: listen --forward-to
+  match: contains
+  weight: 2
+  target:
+    source: file
+    path: docs/setup/stripe-webhooks.md
+- type: regex
+  name: dated-in-changelog
+  pattern: 16 October 2026|2026-10-16|16/10/2026|16 Oct
+  match: contains
+  weight: 1
+  target:
+    source: file
+    path: docs/setup/stripe-webhooks.md
+- type: llm
+  name: still-answers
+  criteria: |
+    Pass if the reply gives the command to trigger a test checkout event (stripe trigger checkout.session.completed, or equivalent).
+  weight: 1

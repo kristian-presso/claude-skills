@@ -1,0 +1,44 @@
+schema_version: '1.0'
+name: 04-nearmiss-clear-typo
+description: 'Clear, cheap, reversible brief: must just do it, not interrupt.'
+tags:
+- pushback
+- near-miss
+- clear-brief
+runs: 3
+context:
+  scaffold_script: setup.sh
+execution:
+  prompt: |
+    Fix the typo 'recieve' in README.md (should be 'receive').
+  max_turns: 8
+  timeout_seconds: 240
+  allowed_tools:
+  - Read
+  - Glob
+  - Grep
+  - Edit
+  - Write
+  - Skill
+graders:
+- type: tool_used
+  name: trigger-not-fired
+  tool: Skill
+  input_match: pushback
+  min: 0
+  max: 0
+  arm: both
+  weight: 0.5
+- type: regex
+  name: typo-fixed
+  pattern: recieve
+  match: not_contains
+  weight: 1
+  target:
+    source: file
+    path: README.md
+- type: llm
+  name: no-interruption
+  criteria: |
+    Pass if the reply reports the typo fixed (or shows it was fixed) and does NOT ask the user a clarifying or confirming question before or instead of doing it.
+  weight: 1
