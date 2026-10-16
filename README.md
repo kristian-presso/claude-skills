@@ -59,8 +59,10 @@ Go-to-market for anyone selling B2B: founders, account executives with a named t
 | --- | --- |
 | [gtm-motion](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/gtm-motion/SKILL.md) | Designing the motion: ICP, tiered accounts, weighted buying signals, personas and a weekly routine. |
 | [signal-prospecting](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/signal-prospecting/SKILL.md) | Finding prospects from public signals (funding, hiring, launches) with a sourced, dated reason to contact each one. |
+| [prospect-radar](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/prospect-radar/SKILL.md) | A daily radar of new companies to contact: narrow Google News and job-board feeds, tested, turned into named accounts with a reason and the people to reach. |
 | [account-play](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/account-play/SKILL.md) | Planning one account: who decides, two or three proposed use cases, a multi-person play and first-touch drafts. |
 | [outbound-sequences](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/outbound-sequences/SKILL.md) | Designing an outbound sequence, with a deliverability pre-flight before a single email goes out. |
+| [pre-send-check](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/pre-send-check/SKILL.md) | Eight checks on a draft against what already happened (threads, meetings, renewals, ownership, dates, address, opt-outs), then a verdict. |
 
 ### [marketing](https://github.com/kristian-presso/claude-marketing-skills)
 
@@ -116,6 +118,8 @@ Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five 
 | gtm | signal-prospecting | 0.92 | 0.65 | +0.27 |
 | gtm | account-play | 0.95 | 0.68 | +0.27 |
 | gtm | outbound-sequences | 1.00 | 0.77 | +0.23 |
+| gtm | prospect-radar | 0.85 | 0.70 | +0.15 |
+| gtm | pre-send-check | 1.00 | 0.70 | +0.30 |
 | marketing | ai-search-visibility | 0.96 | 0.44 | +0.52 |
 | marketing | keyword-research | 1.00 | 0.64 | +0.36 |
 | marketing | content-atomisation | 0.95 | 0.35 | +0.60 |
