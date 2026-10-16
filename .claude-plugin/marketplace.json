@@ -76,6 +76,21 @@
         "companies-house",
         "cash-flow"
       ]
+    },
+    {
+      "name": "operator-starter",
+      "source": "./plugins/operator-starter",
+      "description": "A way of working for running a small business or side project with Claude Code: an interview that writes your CLAUDE.md rules and memory folder, approval-gate hooks that ask before Claude sends, publishes, pays or deletes, and a Friday weekly review.",
+      "version": "0.1.0",
+      "category": "productivity",
+      "keywords": [
+        "operations",
+        "small-business",
+        "claude-md",
+        "hooks",
+        "approval",
+        "weekly-review"
+      ]
     }
   ]
 }
