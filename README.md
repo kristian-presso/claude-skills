@@ -46,6 +46,7 @@ For people building with Claude and MCP.
 | Skill | Use it when |
 | --- | --- |
 | [mcp-server-builder](https://github.com/kristian-presso/claude-agent-builder/blob/main/skills/mcp-server-builder/SKILL.md) | Building or auditing an MCP server: outcome-shaped tools, auth at the boundary, tests, deployment and directory listing. Includes a tested Python starter. |
+| [mcp-operations](https://github.com/kristian-presso/claude-agent-builder/blob/main/skills/mcp-operations/SKILL.md) | Your MCP server is live and you want to know what to record on every call, why the directory says your error rate is high, which tools are failing people, how to rename or retire a tool safely, or how to run a weekly improvement pass. Includes tested SQL. |
 | [mcp-app-builder](https://github.com/kristian-presso/claude-agent-builder/blob/main/skills/mcp-app-builder/SKILL.md) | Building an MCP App (interactive UI inside the chat) and proving it works before you ship it. |
 | [agent-security](https://github.com/kristian-presso/claude-agent-builder/blob/main/skills/agent-security/SKILL.md) | Giving an agent a new tool, credentials or untrusted input. Checks for the lethal trifecta and removes a leg rather than adding warnings. |
 | [ship-with-agents](https://github.com/kristian-presso/claude-agent-builder/blob/main/skills/ship-with-agents/SKILL.md) | Running real work through coding agents: discuss, plan, execute, verify blind, ship. |
@@ -109,7 +110,8 @@ Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five 
 | operator-starter | setup-operator | 1.00 | 0.83 | +0.17 |
 | operator-starter | weekly-review | 1.00 | 0.78 | +0.22 |
 | operator-starter | always-on-mac | 1.00 | 0.80 | +0.20 |
-| agent-builder | mcp-server-builder | 0.90 (was 0.95) | 0.76 (was 0.86) | +0.14 (was +0.09) |
+| agent-builder | mcp-server-builder | 0.87 (was 0.95) | 0.76 (was 0.86) | +0.11 (was +0.09) |
+| agent-builder | mcp-operations | 1.00 | 0.65 | +0.35 |
 | agent-builder | mcp-app-builder | 0.96 | 0.71 | +0.25 |
 | agent-builder | agent-security | 0.99 (was 1.00) | 0.88 (was 0.96) | +0.11 (was +0.04) |
 | agent-builder | ship-with-agents | 0.93 | 0.64 | +0.29 |
