@@ -40,10 +40,12 @@ For people building with Claude and MCP.
 
 ### gtm
 
-Outbound for founders and small B2B teams.
+Go-to-market for anyone selling B2B - founders, account executives with a named territory, account managers growing a book.
 
 | Skill | Use it when |
 | --- | --- |
+| [gtm-motion](plugins/gtm/skills/gtm-motion/SKILL.md) | Designing the motion: ICP, tiered accounts, weighted buying signals, personas and a weekly routine. |
+| [account-play](plugins/gtm/skills/account-play/SKILL.md) | Planning one account: who decides, two or three proposed use cases, a multi-person play and first-touch drafts. |
 | [signal-prospecting](plugins/gtm/skills/signal-prospecting/SKILL.md) | Finding prospects from public signals (funding, hiring, launches) with a sourced, dated reason to contact each one. |
 | [outbound-sequences](plugins/gtm/skills/outbound-sequences/SKILL.md) | Designing an outbound sequence, with a deliverability pre-flight before a single email goes out. |
 

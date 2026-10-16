@@ -1,7 +1,7 @@
 {
   "name": "gtm",
-  "version": "0.1.0",
-  "description": "Outbound for founders and small B2B teams: find prospects from public signals with a sourced reason to contact each, and run sequences that do not burn your sending domains.",
+  "version": "0.2.0",
+  "description": "Go-to-market for anyone selling B2B: design the motion (ICP, tiers, signals, weekly routine), find prospects with a sourced reason to contact each, plan multi-person account plays with proposed use cases, and run sequences that do not burn your sending domains.",
   "author": {
     "name": "Kristian Papadakis",
     "url": "https://kristianpapadakis.com"
@@ -16,6 +16,10 @@
     "cold-email",
     "deliverability",
     "prospecting",
-    "signals"
+    "signals",
+    "icp",
+    "territory",
+    "account-planning",
+    "buying-committee"
   ]
 }
