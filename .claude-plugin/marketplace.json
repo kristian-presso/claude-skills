@@ -11,7 +11,10 @@
   "plugins": [
     {
       "name": "operator-discipline",
-      "source": "./plugins/operator-discipline",
+      "source": {
+        "source": "github",
+        "repo": "kristian-presso/claude-operator-skills"
+      },
       "description": "How an agent behaves when doing real work for a busy founder: challenge a bad brief, hand back solutions not problems, write guides and playbooks people can follow, and turn meetings into decisions and actions.",
       "version": "0.1.0",
       "category": "productivity",
@@ -20,11 +23,15 @@
         "productivity",
         "playbooks",
         "meetings"
-      ]
+      ],
+      "homepage": "https://github.com/kristian-presso/claude-operator-skills"
     },
     {
       "name": "agent-builder",
-      "source": "./plugins/agent-builder",
+      "source": {
+        "source": "github",
+        "repo": "kristian-presso/claude-agent-builder"
+      },
       "description": "MCP servers and MCP Apps that ship and get listed, agent security that removes risk rather than describing it, a loop for shipping real work with coding agents, and turning a manual process into a skill.",
       "version": "0.1.0",
       "category": "development",
@@ -34,11 +41,15 @@
         "security",
         "skills",
         "claude-code"
-      ]
+      ],
+      "homepage": "https://github.com/kristian-presso/claude-agent-builder"
     },
     {
       "name": "gtm",
-      "source": "./plugins/gtm",
+      "source": {
+        "source": "github",
+        "repo": "kristian-presso/claude-gtm-skills"
+      },
       "description": "Outbound for founders and small B2B teams: find prospects from public signals with a sourced reason to contact each, and run sequences that do not burn your sending domains.",
       "version": "0.1.0",
       "category": "sales",
@@ -47,11 +58,15 @@
         "outbound",
         "prospecting",
         "deliverability"
-      ]
+      ],
+      "homepage": "https://github.com/kristian-presso/claude-gtm-skills"
     },
     {
       "name": "marketing",
-      "source": "./plugins/marketing",
+      "source": {
+        "source": "github",
+        "repo": "kristian-presso/claude-marketing-skills"
+      },
       "description": "Content and search for small teams, built to get you found and cited by AI answer engines as well as Google.",
       "version": "0.1.0",
       "category": "marketing",
@@ -61,11 +76,15 @@
         "ai-search",
         "content",
         "linkedin"
-      ]
+      ],
+      "homepage": "https://github.com/kristian-presso/claude-marketing-skills"
     },
     {
       "name": "uk-business",
-      "source": "./plugins/uk-business",
+      "source": {
+        "source": "github",
+        "repo": "kristian-presso/claude-uk-business-skills"
+      },
       "description": "Running a small UK limited company with Claude: the rules, the deadlines, and knowing how much cash you really have. Reference, not advice.",
       "version": "0.1.0",
       "category": "finance",
@@ -75,7 +94,8 @@
         "vat",
         "companies-house",
         "cash-flow"
-      ]
+      ],
+      "homepage": "https://github.com/kristian-presso/claude-uk-business-skills"
     }
   ]
 }

@@ -9,65 +9,67 @@ I run a small software business with AI agents doing most of the work: inbox tri
 /plugin install operator-discipline@claude-skills
 ```
 
-Swap `operator-discipline` for any plugin below, or install all five. `pushback` and `solutions-shape` work best always-on: the operator-discipline README has a few lines to paste into your `CLAUDE.md`.
+Swap `operator-discipline` for any plugin below, or install all five. Each department also has its own repository (linked in the headings below) to star, fork or install on its own. `pushback` and `solutions-shape` work best always-on: the [operator-discipline README](https://github.com/kristian-presso/claude-operator-skills#make-it-always-on) has a few lines to paste into your `CLAUDE.md`.
 
 ## What is in it
 
-### operator-discipline
+Five departments, each in its own repository. This repository is the marketplace that installs any or all of them.
+
+### [operator-discipline](https://github.com/kristian-presso/claude-operator-skills)
 
 How an agent behaves when it is doing real work for a busy person. **Start here.**
 
 | Skill | Use it when |
 | --- | --- |
-| [pushback](plugins/operator-discipline/skills/pushback/SKILL.md) | A brief is vague, contradicts an earlier decision, or has one expensive wrong reading. One focused question, before any work starts. |
-| [solutions-shape](plugins/operator-discipline/skills/solutions-shape/SKILL.md) | The agent is about to report a problem. It hands back finding, recommendation, action instead. |
-| [setup-guide](plugins/operator-discipline/skills/setup-guide/SKILL.md) | You need a setup guide a stranger can follow first time, proven by running it. |
-| [write-playbook](plugins/operator-discipline/skills/write-playbook/SKILL.md) | A recurring process lives in someone's head and needs writing down with an owner and a done-check. |
-| [meeting-notes](plugins/operator-discipline/skills/meeting-notes/SKILL.md) | A transcript or notes need turning into decisions, owned actions, open questions and a follow-up email. |
-| [level-up](plugins/operator-discipline/skills/level-up/SKILL.md) | You want the single next thing worth automating, not a list of twenty. |
+| [pushback](https://github.com/kristian-presso/claude-operator-skills/blob/main/skills/pushback/SKILL.md) | A brief is vague, contradicts an earlier decision, or has one expensive wrong reading. One focused question, before any work starts. |
+| [solutions-shape](https://github.com/kristian-presso/claude-operator-skills/blob/main/skills/solutions-shape/SKILL.md) | The agent is about to report a problem. It hands back finding, recommendation, action instead. |
+| [setup-guide](https://github.com/kristian-presso/claude-operator-skills/blob/main/skills/setup-guide/SKILL.md) | You need a setup guide a stranger can follow first time, proven by running it. |
+| [write-playbook](https://github.com/kristian-presso/claude-operator-skills/blob/main/skills/write-playbook/SKILL.md) | A recurring process lives in someone's head and needs writing down with an owner and a done-check. |
+| [meeting-notes](https://github.com/kristian-presso/claude-operator-skills/blob/main/skills/meeting-notes/SKILL.md) | A transcript or notes need turning into decisions, owned actions, open questions and a follow-up email. |
+| [level-up](https://github.com/kristian-presso/claude-operator-skills/blob/main/skills/level-up/SKILL.md) | You want the single next thing worth automating, not a list of twenty. |
 
-### agent-builder
+### [agent-builder](https://github.com/kristian-presso/claude-agent-builder)
 
 For people building with Claude and MCP.
 
 | Skill | Use it when |
 | --- | --- |
-| [mcp-server-builder](plugins/agent-builder/skills/mcp-server-builder/SKILL.md) | Building or auditing an MCP server: outcome-shaped tools, auth at the boundary, tests, deployment and directory listing. Includes a tested Python starter. |
-| [mcp-app-builder](plugins/agent-builder/skills/mcp-app-builder/SKILL.md) | Building an MCP App (interactive UI inside the chat) and proving it works before you ship it. |
-| [agent-security](plugins/agent-builder/skills/agent-security/SKILL.md) | Giving an agent a new tool, credentials or untrusted input. Checks for the lethal trifecta and removes a leg rather than adding warnings. |
-| [ship-with-agents](plugins/agent-builder/skills/ship-with-agents/SKILL.md) | Running real work through coding agents: discuss, plan, execute, verify blind, ship. |
-| [skill-builder](plugins/agent-builder/skills/skill-builder/SKILL.md) | Turning a process you do by hand into a reusable skill, with a validator. |
+| [mcp-server-builder](https://github.com/kristian-presso/claude-agent-builder/blob/main/skills/mcp-server-builder/SKILL.md) | Building or auditing an MCP server: outcome-shaped tools, auth at the boundary, tests, deployment and directory listing. Includes a tested Python starter. |
+| [mcp-app-builder](https://github.com/kristian-presso/claude-agent-builder/blob/main/skills/mcp-app-builder/SKILL.md) | Building an MCP App (interactive UI inside the chat) and proving it works before you ship it. |
+| [agent-security](https://github.com/kristian-presso/claude-agent-builder/blob/main/skills/agent-security/SKILL.md) | Giving an agent a new tool, credentials or untrusted input. Checks for the lethal trifecta and removes a leg rather than adding warnings. |
+| [ship-with-agents](https://github.com/kristian-presso/claude-agent-builder/blob/main/skills/ship-with-agents/SKILL.md) | Running real work through coding agents: discuss, plan, execute, verify blind, ship. |
+| [skill-builder](https://github.com/kristian-presso/claude-agent-builder/blob/main/skills/skill-builder/SKILL.md) | Turning a process you do by hand into a reusable skill, with a validator. |
 
-### gtm
+### [gtm](https://github.com/kristian-presso/claude-gtm-skills)
 
 Outbound for founders and small B2B teams.
 
 | Skill | Use it when |
 | --- | --- |
-| [signal-prospecting](plugins/gtm/skills/signal-prospecting/SKILL.md) | Finding prospects from public signals (funding, hiring, launches) with a sourced, dated reason to contact each one. |
-| [outbound-sequences](plugins/gtm/skills/outbound-sequences/SKILL.md) | Designing an outbound sequence, with a deliverability pre-flight before a single email goes out. |
+| [signal-prospecting](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/signal-prospecting/SKILL.md) | Finding prospects from public signals (funding, hiring, launches) with a sourced, dated reason to contact each one. |
+| [outbound-sequences](https://github.com/kristian-presso/claude-gtm-skills/blob/main/skills/outbound-sequences/SKILL.md) | Designing an outbound sequence, with a deliverability pre-flight before a single email goes out. |
 
-### marketing
+### [marketing](https://github.com/kristian-presso/claude-marketing-skills)
 
 Content and search, built to get you cited by AI answer engines as well as ranked by Google.
 
 | Skill | Use it when |
 | --- | --- |
-| [ai-search-visibility](plugins/marketing/skills/ai-search-visibility/SKILL.md) | Checking whether ChatGPT, Claude and Perplexity can find and cite your site, and rewriting pages so they get cited. |
-| [keyword-research](plugins/marketing/skills/keyword-research/SKILL.md) | Turning seed terms into a clustered keyword map on a free stack. |
-| [content-atomisation](plugins/marketing/skills/content-atomisation/SKILL.md) | Turning one long piece into a week of channel-specific posts. |
-| [linkedin-post](plugins/marketing/skills/linkedin-post/SKILL.md) | Drafting LinkedIn posts that sound like you, learned from your own past posts. |
-| [seo-schema-gate](plugins/marketing/skills/seo-schema-gate/SKILL.md) | Checking structured data and meta tags before a page publishes, and the live URL after. |
+| [ai-search-visibility](https://github.com/kristian-presso/claude-marketing-skills/blob/main/skills/ai-search-visibility/SKILL.md) | Checking whether ChatGPT, Claude and Perplexity can find and cite your site, and rewriting pages so they get cited. |
+| [keyword-research](https://github.com/kristian-presso/claude-marketing-skills/blob/main/skills/keyword-research/SKILL.md) | Turning seed terms into a clustered keyword map on a free stack. |
+| [content-atomisation](https://github.com/kristian-presso/claude-marketing-skills/blob/main/skills/content-atomisation/SKILL.md) | Turning one long piece into a week of channel-specific posts. |
+| [linkedin-post](https://github.com/kristian-presso/claude-marketing-skills/blob/main/skills/linkedin-post/SKILL.md) | Drafting LinkedIn posts that sound like you, learned from your own past posts. |
+| [seo-schema-gate](https://github.com/kristian-presso/claude-marketing-skills/blob/main/skills/seo-schema-gate/SKILL.md) | Checking structured data and meta tags before a page publishes, and the live URL after. |
 
-### uk-business
+### [uk-business](https://github.com/kristian-presso/claude-uk-business-skills)
 
 Running a small UK limited company. Reference, not advice: every figure carries the date it was checked and the official page to verify it.
 
 | Skill | Use it when |
 | --- | --- |
-| [uk-company-guide](plugins/uk-business/skills/uk-company-guide/SKILL.md) | You have a question about Corporation Tax, VAT, Companies House, paying yourself, employing people or data protection. |
-| [uk-deadlines](plugins/uk-business/skills/uk-deadlines/SKILL.md) | You want your company's own filing calendar for the next 12 months. |
-| [cash-runway](plugins/uk-business/skills/cash-runway/SKILL.md) | You want to know how much cash is yours after VAT, Corporation Tax and PAYE, and how long it lasts. |
+| [uk-company-guide](https://github.com/kristian-presso/claude-uk-business-skills/blob/main/skills/uk-company-guide/SKILL.md) | You have a question about Corporation Tax, VAT, Companies House, paying yourself, employing people or data protection. |
+| [uk-deadlines](https://github.com/kristian-presso/claude-uk-business-skills/blob/main/skills/uk-deadlines/SKILL.md) | You want your company's own filing calendar for the next 12 months. |
+| [cash-runway](https://github.com/kristian-presso/claude-uk-business-skills/blob/main/skills/cash-runway/SKILL.md) | You want to know how much cash is yours after VAT, Corporation Tax and PAYE, and how long it lasts. |
 
 ## Tested, not just written
 
@@ -97,18 +99,19 @@ Every skill is evaluated with Claude Code's built-in `claude plugin eval`: five 
 | uk-business | uk-deadlines | 0.97 | 0.63 | +0.34 |
 | uk-business | cash-runway | 1.00 | 0.43 | +0.57 |
 
-Small gains mean plain Claude already does well there; those skills earn their place on the cases it gets wrong. The eval cases live in each plugin's `evals/` folder, so you can re-run them yourself:
+Small gains mean plain Claude already does well there; those skills earn their place on the cases it gets wrong. The eval cases live in each department repository's `evals/` folder, so you can re-run them yourself:
 
 ```bash
-cd plugins/marketing
+git clone https://github.com/kristian-presso/claude-marketing-skills
+cd claude-marketing-skills
 claude plugin eval . --trust-plugin --scaffold --ablation with-without --runs 3 --no-publish
 ```
 
-Bundled scripts have their own unit tests (standard-library Python) in each plugin's `tests/` folder, run on every push.
+Bundled scripts have their own unit tests (standard-library Python) in each department repository's `tests/` folder, run by its CI on every push.
 
 ## Using them in the Claude app
 
-On claude.ai or the Claude desktop app, download this repository as a zip (Code, then Download ZIP), take the folder of the skill you want (the one containing `SKILL.md`), zip that folder on its own and upload it in your skills settings. Each skill works on its own.
+On claude.ai or the Claude desktop app, open the department's repository and download it as a zip (Code, then Download ZIP), take the folder of the skill you want (the one containing `SKILL.md`), zip that folder on its own and upload it in your skills settings. Each skill works on its own.
 
 ## How they are built
 
