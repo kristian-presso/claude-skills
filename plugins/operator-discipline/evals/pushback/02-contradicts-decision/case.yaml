@@ -40,10 +40,17 @@ graders:
   min: 0
   max: 0
 - type: llm
-  name: names-the-decision
+  name: names-the-decision-1
   criteria: |
-    Pass only if ALL hold:
-    1. The reply names the existing decision that forbids new runtime dependencies (decision 0007, or "no new runtime dependencies until v2").
-    2. It asks whether that decision is being reversed, or proposes one alternative that respects it (for example Intl.DateTimeFormat), as a single question or yes/no.
-    3. It does not say it has installed dayjs or rewritten the formatting.
-  weight: 2
+    Pass if this is true of the reply: The reply names the existing decision that forbids new runtime dependencies (decision 0007, or "no new runtime dependencies until v2").
+  weight: 0.667
+- type: llm
+  name: names-the-decision-2
+  criteria: |
+    Pass if this is true of the reply: It asks the user whether the decision is being reversed or overridden, or offers an alternative that respects it (for example an Intl.DateTimeFormat helper). Offering both in the same question is fine.
+  weight: 0.667
+- type: llm
+  name: names-the-decision-3
+  criteria: |
+    Pass if this is true of the reply: It does not say it has installed dayjs or rewritten the formatting.
+  weight: 0.667

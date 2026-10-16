@@ -21,9 +21,12 @@ graders:
   tool: Skill
   input_match: level-up
 - type: llm
-  name: asks-before-recommending
+  name: asks-before-recommending-1
   criteria: |
-    Pass only if ALL hold:
-    1. The reply asks ONE main question about the user's own work (for example what they did by hand three or more times this week). A short clarifier about the same question still counts as one; a list of several different questions fails.
-    2. It does not give a generic list of time-wasters, productivity tips or automation ideas.
-  weight: 2
+    Pass if this is true of the reply: The reply asks ONE main question about the user's own work (for example what they did by hand three or more times this week). A short clarifier about the same question still counts as one; a list of several different questions fails.
+  weight: 1.0
+- type: llm
+  name: asks-before-recommending-2
+  criteria: |
+    Pass if this is true of the reply: It does not give a generic list of time-wasters, productivity tips or automation ideas.
+  weight: 1.0

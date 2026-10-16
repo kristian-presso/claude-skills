@@ -21,11 +21,22 @@ graders:
   tool: Skill
   input_match: level-up
 - type: llm
-  name: one-pick-simplest-build
+  name: one-pick-simplest-build-1
   criteria: |
-    Pass only if ALL hold:
-    1. Exactly ONE recommended next automation, plus exactly one named runner-up (not three or four equal options).
-    2. The build method is the simplest that fits (a no-code automation, a scheduled job, or an existing tool feature), not an autonomous AI agent, for a fully specified task like copying form leads.
-    3. It gives a rough time-saved estimate derived from the user's own numbers.
-    4. It does not re-ask the questions the user already answered, and it does not start building.
-  weight: 2
+    Pass if this is true of the reply: Exactly ONE recommended next automation, plus exactly one named runner-up (not three or four equal options).
+  weight: 0.5
+- type: llm
+  name: one-pick-simplest-build-2
+  criteria: |
+    Pass if this is true of the reply: The build method is the simplest that fits (a no-code automation, a scheduled job, or an existing tool feature), not an autonomous AI agent, for a fully specified task like copying form leads.
+  weight: 0.5
+- type: llm
+  name: one-pick-simplest-build-3
+  criteria: |
+    Pass if this is true of the reply: It gives a rough time-saved estimate derived from the user's own numbers.
+  weight: 0.5
+- type: llm
+  name: one-pick-simplest-build-4
+  criteria: |
+    Pass if this is true of the reply: It does not re-ask the questions the user already answered, and it does not start building.
+  weight: 0.5

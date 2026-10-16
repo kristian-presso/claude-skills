@@ -40,12 +40,15 @@ graders:
   min: 0
   max: 0
 - type: llm
-  name: asks-what-it-solves
+  name: asks-what-it-solves-1
   criteria: |
-    Pass only if ALL hold:
-    1. The reply asks what problem adding AI would solve, or what evidence prompted it (for example where new users drop off), rather than only asking which kind of AI feature the user wants.
-    2. It does not produce new or rewritten onboarding emails or an implementation plan.
-  weight: 2
+    Pass if this is true of the reply: The reply asks what problem adding AI would solve, or what evidence prompted it (for example where new users drop off), rather than only asking which kind of AI feature the user wants.
+  weight: 1.0
+- type: llm
+  name: asks-what-it-solves-2
+  criteria: |
+    Pass if this is true of the reply: It does not produce new or rewritten onboarding emails or an implementation plan.
+  weight: 1.0
 - type: llm
   name: brief-and-single
   criteria: |

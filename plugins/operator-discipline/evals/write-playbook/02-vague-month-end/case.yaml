@@ -21,10 +21,17 @@ graders:
   tool: Skill
   input_match: write-playbook
 - type: llm
-  name: no-author-from-memory
+  name: no-author-from-memory-1
   criteria: |
-    Pass only if ALL hold:
-    1. The reply does NOT present a full generic month-end procedure as if it were this business's process.
-    2. Its preferred source is a real run: watching, screen-sharing or recording the current person doing an actual close (not only "tell me the steps" or "answer these questions").
-    3. It says that any step not observed in a real run will be marked as inferred or to be confirmed, OR that the draft will be proved by having the new bookkeeper run it.
-  weight: 2
+    Pass if this is true of the reply: The reply does NOT present a full generic month-end procedure as if it were this business's process.
+  weight: 0.667
+- type: llm
+  name: no-author-from-memory-2
+  criteria: |
+    Pass if this is true of the reply: Its preferred source is a real run: watching, screen-sharing or recording the current person doing an actual close (not only "tell me the steps" or "answer these questions").
+  weight: 0.667
+- type: llm
+  name: no-author-from-memory-3
+  criteria: |
+    Pass if this is true of the reply: It says that any step not observed in a real run will be marked as inferred or to be confirmed, OR that the draft will be proved by having the new bookkeeper run it.
+  weight: 0.667

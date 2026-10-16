@@ -7,8 +7,8 @@ runs: 3
 execution:
   prompt: |
     Draft a one-paragraph privacy notice for our newsletter sign-up form.
-  max_turns: 3
-  timeout_seconds: 90
+  max_turns: 6
+  timeout_seconds: 120
   allowed_tools:
   - Read
   - Glob

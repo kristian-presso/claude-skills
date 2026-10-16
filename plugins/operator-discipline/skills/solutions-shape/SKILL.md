@@ -50,6 +50,11 @@ Then apply the act-or-ask test:
   one yes/no, not a description of it. Hand over the draft, the link, or the diff, so
   approving takes one read.
 
+**One pick means one named option.** "Use X or Y, or Z if you want W" is a menu, not a
+recommendation. Name a single option first, then at most one line on what would change
+the pick. Leave a full comparison table out unless it was asked for; it pulls the reader
+back into choosing.
+
 ## Examples
 
 **Failure with a fix. Reversible, so act then report:**

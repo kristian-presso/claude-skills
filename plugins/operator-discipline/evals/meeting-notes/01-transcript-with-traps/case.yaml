@@ -47,15 +47,30 @@ graders:
   weight: 1
   flags: i
 - type: llm
-  name: decisions-actions-judgement
+  name: decisions-actions-judgement-1
   criteria: |
-    Pass only if at least FOUR of these FIVE hold:
-    1. Tom's "by Friday" is converted to a real date (16 October 2026, or Fri 16 Oct).
-    2. Priya's "next Wednesday" is converted to a real date (21 October 2026).
-    3. The hosting renewal has no invented owner: it is shown as unassigned and raised as an open question.
-    4. The annual hosting plan is listed as a decision marked implied or to be confirmed, not as a firm decision.
-    5. A follow-up email draft is included and is under about 200 words.
-  weight: 2
+    Pass if this is true of the reply: Tom's "by Friday" is converted to a real date (16 October 2026, or Fri 16 Oct).
+  weight: 0.4
+- type: llm
+  name: decisions-actions-judgement-2
+  criteria: |
+    Pass if this is true of the reply: Priya's "next Wednesday" is converted to a real date (21 October 2026).
+  weight: 0.4
+- type: llm
+  name: decisions-actions-judgement-3
+  criteria: |
+    Pass if this is true of the reply: The hosting renewal has no invented owner: it is shown as unassigned and raised as an open question.
+  weight: 0.4
+- type: llm
+  name: decisions-actions-judgement-4
+  criteria: |
+    Pass if this is true of the reply: The annual hosting plan is listed as a decision marked implied or to be confirmed, not as a firm decision.
+  weight: 0.4
+- type: llm
+  name: decisions-actions-judgement-5
+  criteria: |
+    Pass if this is true of the reply: A follow-up email draft is included and is under about 200 words.
+  weight: 0.4
 - type: llm
   name: open-questions-routed
   criteria: |

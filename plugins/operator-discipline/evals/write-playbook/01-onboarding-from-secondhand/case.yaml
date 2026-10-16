@@ -23,18 +23,37 @@ graders:
   tool: Skill
   input_match: write-playbook
 - type: llm
-  name: playbook-judgement
+  name: playbook-judgement-1
   criteria: |
-    Judge the playbook file. Pass only if at least FOUR of these FIVE hold:
-    1. A one-sentence outcome, plus what starts the process and where it stops.
-    2. A named owner and a review date (roughly 90 days out), OR clearly marked owner/review fields that the reply says must be filled before it counts as done. A playbook with no owner or review date at all fails this item.
-    3. A done-check list of observable end states (for example contract shows Signed, invoice shows Paid, kickoff call in both calendars), not feelings.
-    4. Steps based on second-hand information are marked as inferred or to be confirmed, and the VAT variation is flagged as unknown rather than invented.
-    5. Steps that send something external or need human approval are marked as such.
-  weight: 2
-  focus:
+    Pass if this is true of what was produced: A one-sentence outcome, plus what starts the process and where it stops.
+  weight: 0.4
+  focus: &id001
     source: file
     path: playbooks/client-onboarding.md
+- type: llm
+  name: playbook-judgement-2
+  criteria: |
+    Pass if this is true of what was produced: A named owner and a review date (roughly 90 days out), OR clearly marked owner/review fields that the reply says must be filled before it counts as done. A playbook with no owner or review date at all fails this item.
+  weight: 0.4
+  focus: *id001
+- type: llm
+  name: playbook-judgement-3
+  criteria: |
+    Pass if this is true of what was produced: A done-check list of observable end states (for example contract shows Signed, invoice shows Paid, kickoff call in both calendars), not feelings.
+  weight: 0.4
+  focus: *id001
+- type: llm
+  name: playbook-judgement-4
+  criteria: |
+    Pass if this is true of what was produced: Steps based on second-hand information are marked as inferred or to be confirmed, and the VAT variation is flagged as unknown rather than invented.
+  weight: 0.4
+  focus: *id001
+- type: llm
+  name: playbook-judgement-5
+  criteria: |
+    Pass if this is true of what was produced: Steps that send something external or need human approval are marked as such.
+  weight: 0.4
+  focus: *id001
 - type: llm
   name: prove-it-next
   criteria: |

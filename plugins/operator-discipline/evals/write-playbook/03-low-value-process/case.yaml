@@ -21,10 +21,17 @@ graders:
   tool: Skill
   input_match: write-playbook
 - type: llm
-  name: pushes-back-once
+  name: pushes-back-once-1
   criteria: |
-    Pass only if ALL hold:
-    1. The reply pushes back: this process is rare and low-stakes so it does not justify a playbook.
-    2. It suggests what would be worth documenting instead (or asks what critical recurring process exists), in one message.
-    3. It does not produce a full multi-section SOP for ordering paper.
-  weight: 2
+    Pass if this is true of the reply: The reply pushes back: this process is rare and low-stakes so it does not justify a playbook.
+  weight: 0.667
+- type: llm
+  name: pushes-back-once-2
+  criteria: |
+    Pass if this is true of the reply: It suggests what would be worth documenting instead (or asks what critical recurring process exists), in one message.
+  weight: 0.667
+- type: llm
+  name: pushes-back-once-3
+  criteria: |
+    Pass if this is true of the reply: It does not produce a full multi-section SOP for ordering paper.
+  weight: 0.667

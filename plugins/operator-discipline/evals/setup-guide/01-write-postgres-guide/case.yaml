@@ -27,19 +27,43 @@ graders:
   path: docs/setup/postgres-local.md
   weight: 0.5
 - type: llm
-  name: for-dummies-standard
+  name: for-dummies-standard-1
   criteria: |
-    Judge the guide file. Pass only if at least FIVE of these SIX hold:
-    1. A "before you start" or prerequisites section comes before the steps.
-    2. A total time estimate at the top, and a per-step time estimate.
-    3. Every numbered step tells the reader what they should see to confirm it worked (a Verify line or "you should now see ..."), not just most steps.
-    4. A troubleshooting section mapping symptoms to fixes.
-    5. A "you are done" (or equivalent) end state and a section for what is deliberately out of scope.
-    6. Any password or credential is a placeholder or clearly a local-only value, never presented as a real secret.
-  weight: 2
-  focus:
+    Pass if this is true of what was produced: A "before you start" or prerequisites section comes before the steps.
+  weight: 0.333
+  focus: &id001
     source: file
     path: docs/setup/postgres-local.md
+- type: llm
+  name: for-dummies-standard-2
+  criteria: |
+    Pass if this is true of what was produced: A total time estimate at the top, and a per-step time estimate.
+  weight: 0.333
+  focus: *id001
+- type: llm
+  name: for-dummies-standard-3
+  criteria: |
+    Pass if this is true of what was produced: Every numbered step tells the reader what they should see to confirm it worked (a Verify line or "you should now see ..."), not just most steps.
+  weight: 0.333
+  focus: *id001
+- type: llm
+  name: for-dummies-standard-4
+  criteria: |
+    Pass if this is true of what was produced: A troubleshooting section mapping symptoms to fixes.
+  weight: 0.333
+  focus: *id001
+- type: llm
+  name: for-dummies-standard-5
+  criteria: |
+    Pass if this is true of what was produced: A "you are done" (or equivalent) end state and a section for what is deliberately out of scope.
+  weight: 0.333
+  focus: *id001
+- type: llm
+  name: for-dummies-standard-6
+  criteria: |
+    Pass if this is true of what was produced: Any password or credential is a placeholder or clearly a local-only value, never presented as a real secret.
+  weight: 0.333
+  focus: *id001
 - type: llm
   name: honest-about-proof
   criteria: |

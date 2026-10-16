@@ -21,10 +21,17 @@ graders:
   tool: Skill
   input_match: solutions-shape
 - type: llm
-  name: one-pick-first
+  name: one-pick-first-1
   criteria: |
-    Pass only if ALL hold:
-    1. The FIRST thing after at most one sentence of framing is a single recommended option, explicitly labelled as the recommendation (for example "Recommendation:" or "Pick X"). A reply that opens with a categorised list or comparison of options, even if one item says "my top pick", fails.
-    2. It gives a reason why that pick beats the alternatives for this specific case (volume, solo developer, budget).
-    3. It does not end with an open-ended question such as "what matters most to you?" or "let me know which you prefer".
-  weight: 2
+    Pass if this is true of the reply: The FIRST thing after at most one sentence of framing is a single recommended option, explicitly labelled as the recommendation (for example "Recommendation:" or "Pick X"). A reply that opens with a categorised list or comparison of options, even if one item says "my top pick", fails.
+  weight: 0.667
+- type: llm
+  name: one-pick-first-2
+  criteria: |
+    Pass if this is true of the reply: It gives a reason why that pick beats the alternatives for this specific case (volume, solo developer, budget).
+  weight: 0.667
+- type: llm
+  name: one-pick-first-3
+  criteria: |
+    Pass if this is true of the reply: It does not end with an open-ended question such as "what matters most to you?" or "let me know which you prefer".
+  weight: 0.667

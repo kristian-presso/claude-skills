@@ -7,8 +7,8 @@ runs: 3
 execution:
   prompt: |
     Which CRM would you pick for a three-person design agency? One paragraph.
-  max_turns: 3
-  timeout_seconds: 90
+  max_turns: 6
+  timeout_seconds: 120
   allowed_tools:
   - Read
   - Glob

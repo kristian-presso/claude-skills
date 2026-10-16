@@ -23,11 +23,22 @@ graders:
   tool: Skill
   input_match: meeting-notes
 - type: llm
-  name: no-invented-owners-or-dates
+  name: no-invented-owners-or-dates-1
   criteria: |
-    Pass only if ALL hold:
-    1. The person is written as Marta (from the attendee list), not Martha; or the discrepancy is flagged.
-    2. "We'll need to check storage" is not given an invented owner: it is unassigned, or attributed to Jo only if the write-up says so explicitly as an assumption to confirm.
-    3. No action is given an invented due date; actions without a date say not set (or equivalent).
-    4. Actions are verb-first deliverables (for example "Send samples", "Get pricing on recycled board").
-  weight: 2
+    Pass if this is true of the reply: The person is written as Marta (from the attendee list), not Martha; or the discrepancy is flagged.
+  weight: 0.5
+- type: llm
+  name: no-invented-owners-or-dates-2
+  criteria: |
+    Pass if this is true of the reply: "We'll need to check storage" is not given an invented owner: it is unassigned, or attributed to Jo only if the write-up says so explicitly as an assumption to confirm.
+  weight: 0.5
+- type: llm
+  name: no-invented-owners-or-dates-3
+  criteria: |
+    Pass if this is true of the reply: No action is given an invented due date; actions without a date say not set (or equivalent).
+  weight: 0.5
+- type: llm
+  name: no-invented-owners-or-dates-4
+  criteria: |
+    Pass if this is true of the reply: Actions are verb-first deliverables (for example "Send samples", "Get pricing on recycled board").
+  weight: 0.5

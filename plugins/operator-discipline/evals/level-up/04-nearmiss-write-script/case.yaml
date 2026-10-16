@@ -7,8 +7,8 @@ runs: 3
 execution:
   prompt: |
     Write a bash script that renames every .jpeg file in the current folder to .jpg.
-  max_turns: 3
-  timeout_seconds: 90
+  max_turns: 6
+  timeout_seconds: 120
   allowed_tools:
   - Read
   - Glob

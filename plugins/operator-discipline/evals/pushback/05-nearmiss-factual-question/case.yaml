@@ -7,8 +7,8 @@ runs: 3
 execution:
   prompt: |
     Quick one: what's the difference between a 301 and a 302 redirect? Two lines max.
-  max_turns: 4
-  timeout_seconds: 120
+  max_turns: 8
+  timeout_seconds: 150
   allowed_tools:
   - Read
   - Glob

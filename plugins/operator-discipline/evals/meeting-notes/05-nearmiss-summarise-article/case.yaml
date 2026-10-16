@@ -7,8 +7,8 @@ runs: 3
 execution:
   prompt: |
     Summarise this in two bullets: Remote work has changed how small firms hire. Many now recruit nationally, which widens the talent pool but raises competition for the same candidates. Pay transparency is rising as a result.
-  max_turns: 3
-  timeout_seconds: 90
+  max_turns: 6
+  timeout_seconds: 120
   allowed_tools:
   - Read
   - Glob

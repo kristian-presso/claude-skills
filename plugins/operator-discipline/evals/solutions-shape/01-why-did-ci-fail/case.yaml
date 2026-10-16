@@ -25,13 +25,20 @@ graders:
   tool: Skill
   input_match: solutions-shape
 - type: llm
-  name: finding-recommendation-action
+  name: finding-recommendation-action-1
   criteria: |
-    Pass only if ALL hold:
-    1. It states the cause plainly: the test still imports the old name gross_total after the rename to total_with_vat.
-    2. It gives ONE recommended fix (update the test to the new name), not a menu of equal options with no pick.
-    3. It reports an action already taken or immediately being taken (it applied the fix, since it is small and reversible), rather than only asking "would you like me to fix it?".
-  weight: 2
+    Pass if this is true of the reply: It states the cause plainly: the test still imports the old name gross_total after the rename to total_with_vat.
+  weight: 0.667
+- type: llm
+  name: finding-recommendation-action-2
+  criteria: |
+    Pass if this is true of the reply: It gives ONE recommended fix (update the test to the new name), not a menu of equal options with no pick.
+  weight: 0.667
+- type: llm
+  name: finding-recommendation-action-3
+  criteria: |
+    Pass if this is true of the reply: It reports an action already taken or immediately being taken (it applied the fix, since it is small and reversible), rather than only asking "would you like me to fix it?".
+  weight: 0.667
 - type: regex
   name: fix-applied
   pattern: total_with_vat

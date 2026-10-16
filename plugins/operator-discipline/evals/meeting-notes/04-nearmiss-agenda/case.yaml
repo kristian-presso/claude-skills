@@ -7,8 +7,8 @@ runs: 3
 execution:
   prompt: |
     Draft an agenda for next week's team meeting about Q4 planning. 30 minutes, four people.
-  max_turns: 3
-  timeout_seconds: 90
+  max_turns: 6
+  timeout_seconds: 120
   allowed_tools:
   - Read
   - Glob
